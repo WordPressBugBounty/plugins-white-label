@@ -150,7 +150,6 @@ function white_label_login_remove_go_to_site_link($url)
 }
 add_filter('login_site_html_link', 'white_label_login_remove_go_to_site_link');
 
-
 /**
  * Remove Lost Your Password? Link
  *

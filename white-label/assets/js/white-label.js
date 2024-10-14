@@ -59,25 +59,21 @@ document.addEventListener('DOMContentLoaded', function (e) {
     });
 
     if (banana_activetab != '' && jQuery(banana_activetab + '-tab').length ) {
-        jQuery(banana_activetab + '-tab').addClass('nav-tab-active');
-        white_label_login_preview(banana_activetab);
-        white_label_upgrade_sidebar(banana_activetab);
+        jQuery(banana_activetab + '-tab').addClass('active');
     }
     else {
-        jQuery('.nav-tab-wrapper a:first').addClass('nav-tab-active');
+        jQuery('#white-label-pane-left ul li:first').addClass('active');
     }
 
-    jQuery('.nav-tab-wrapper a').click(function(evt) {
-        jQuery('.nav-tab-wrapper a').removeClass('nav-tab-active');
-        jQuery(this).addClass('nav-tab-active').blur();
+    jQuery('#white-label-pane-left ul li a').click(function(evt) {
+        jQuery('#white-label-pane-left ul li').removeClass('active');
+        jQuery(this).parent('li').addClass('active').blur();
         var clicked_group = jQuery(this).attr('href');
         if (typeof(localStorage) != 'undefined' ) {
             localStorage.setItem("banana_activetab", jQuery(this).attr('href'));
         }
         jQuery('.group').hide();
         jQuery(clicked_group).fadeIn(100);
-        white_label_login_preview(clicked_group);
-        white_label_upgrade_sidebar(clicked_group);
 
         evt.preventDefault();
     });
@@ -148,21 +144,3 @@ jQuery(document).ready(function() {
         }
     });
 });
-
-function white_label_login_preview(tab) {
-  // Hide Login Sidebar When Accessing Another Tab
-  if (tab != '#white_label_login') {
-      jQuery('.white-label-preview-box').hide();
-  } else {
-      jQuery('.white-label-preview-box').fadeIn(100);
-  }
-}
-
-function white_label_upgrade_sidebar(tab) {
-  // Hide Upgrade Sidebar When Accessing Upgrade Tab
-  if (tab == '#white_label_upgrade') {
-      jQuery('.white-label-sidebar > .white-label-metabox:nth-of-type(2)').hide();
-  } else {
-      jQuery('.white-label-sidebar .white-label-metabox').fadeIn(100);
-  }
-}

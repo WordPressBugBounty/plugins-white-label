@@ -262,40 +262,62 @@ class white_label_Import_Export_Options
     public function display_html()
     {
         ?>
-            <div class="white-label-subsection">
-                <h3 class="white-label-subheading">
-                    <?php _e('Import Settings', 'white-label'); ?>
-                    <a target="_blank" tabindex="-1" class="white-label-help" href="https://whitewp.com/documentation/article/import-and-export-white-label-settings/"><span class="dashicons dashicons-editor-help"></span></a>
-                </h3>
-                <p class="description"><?php _e('Import the plugin settings from a .json file. This file can be obtained by exporting your settings from another site.', 'white-label'); ?></p>
-                <hr>
-                <form method="post" enctype="multipart/form-data">
-                    <p>
-                        <input type="file" name="import_file"/>
-                    </p>
-                    <p>
-                        <input type="hidden" name="white_label_action" value="import_settings" />
-                        <?php wp_nonce_field('white_label_import_nonce', 'white_label_import_nonce'); ?>
-                        <?php submit_button(__('Import'), 'secondary', 'submit', false, ['id' => 'submit-import']); ?>
-                    </p>
-                </form>
-            </div>
+            <table class="form-table" role="presentation">
+                <tbody>
+                    <tr class="subheading">
+                        <td>
+                            <h3 class="white-label-subheading">
+                                <?php _e('Import Settings', 'white-label'); ?>
+                                <a target="_blank" tabindex="-1" class="white-label-help" href="https://whitewp.com/documentation/article/import-and-export-white-label-settings/"><span class="dashicons dashicons-editor-help"></span></a>
+                            </h3>
+                            <p class="description"><?php _e('Import the plugin settings from a .json file. This file can be obtained by exporting your settings from another site.', 'white-label'); ?></p>
+                            <hr>
+                        </td>
+                    </tr>
 
-            <div class="white-label-subsection">
-                <h3 class="white-label-subheading">
-                    <?php _e('Export Settings', 'white-label'); ?>
-                    <a target="_blank" tabindex="-1" class="white-label-help" href="https://whitewp.com/documentation/article/import-and-export-white-label-settings/"><span class="dashicons dashicons-editor-help"></span></a>
-                </h3>
-                <p class="description"><?php _e('Export the plugin settings for this site as a .json file. This allows you to easily import your configuration into another site.', 'white-label'); ?></p>
-                <hr>
-                <form method="post">
-                    <p><input type="hidden" name="white_label_action" value="export_settings" /></p>
-                    <p>
-                        <?php wp_nonce_field('white_label_export_nonce', 'white_label_export_nonce'); ?>
-                        <?php submit_button(__('Export'), 'secondary', 'submit', false, ['id' => 'submit-export']); ?>
-                    </p>
-                </form>
-            </div>
+                    <tr>
+                        <td>
+                            <form method="post" enctype="multipart/form-data">
+                                <input type="file" name="import_file"/>
+                                
+                                <p>
+                                    <input type="hidden" name="white_label_action" value="import_settings" />
+                                    <?php wp_nonce_field('white_label_import_nonce', 'white_label_import_nonce'); ?>
+                                    <?php submit_button(__('Import Settings'), 'secondary', 'submit', false, ['id' => 'submit-import']); ?>
+                                </p>
+                            </form>
+                        </td>
+                    </tr>
+                </tbody>
+            </table>
+
+            <table class="form-table" role="presentation">
+                <tbody>
+                    <tr class="subheading">
+                        <td>
+                            <h3 class="white-label-subheading">
+                                <?php _e('Export Settings', 'white-label'); ?>
+                                <a target="_blank" tabindex="-1" class="white-label-help" href="https://whitewp.com/documentation/article/import-and-export-white-label-settings/"><span class="dashicons dashicons-editor-help"></span></a>
+                            </h3>
+                            <p class="description"><?php _e('Export the plugin settings for this site as a .json file. This allows you to easily import your configuration into another site.', 'white-label'); ?></p>
+                            <hr>
+                        </td>
+                    </tr>
+
+                    <tr>
+                        <td>
+                            <form method="post">
+                                <input type="hidden" name="white_label_action" value="export_settings" />
+
+                                <p>
+                                    <?php wp_nonce_field('white_label_export_nonce', 'white_label_export_nonce'); ?>
+                                    <?php submit_button(__('Export Settings'), 'secondary', 'submit', false, ['id' => 'submit-export']); ?>
+                                </p>
+                            </form>
+                        </td>
+                    </tr>
+                </tbody>
+            </table>
         </div><!--end .wrap-->
 		<?php
     }

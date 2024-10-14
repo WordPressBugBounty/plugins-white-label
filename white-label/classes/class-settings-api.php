@@ -160,6 +160,7 @@ class white_label_Settings_Api
                     'min' => isset($option['min']) ? $option['min'] : '',
                     'max' => isset($option['max']) ? $option['max'] : '',
                     'step' => isset($option['step']) ? $option['step'] : '',
+                    'prepend' => isset($option['prepend']) ? $option['prepend'] : '',
                 ];
                 add_settings_field("{$section}[{$name}]", $label, $callback, $section, $section, $args);
             }
@@ -222,7 +223,14 @@ class white_label_Settings_Api
         $size = isset($args['size']) && !is_null($args['size']) ? $args['size'] : 'regular';
         $type = isset($args['type']) ? $args['type'] : 'text';
         $placeholder = empty($args['placeholder']) ? '' : ' placeholder="'.$args['placeholder'].'"';
-        $html = sprintf('<input type="%1$s" class="%2$s-text" id="%3$s[%4$s]" name="%3$s[%4$s]" value="%5$s"%6$s/>', $type, $size, $args['section'], $args['id'], $value, $placeholder);
+
+        $html = '';
+
+        if (!empty($args['prepend'])) {
+            $html .= $args['prepend'];
+        }
+
+        $html .= sprintf('<input type="%1$s" class="%2$s-text" id="%3$s[%4$s]" name="%3$s[%4$s]" value="%5$s"%6$s/>', $type, $size, $args['section'], $args['id'], $value, $placeholder);
         $html .= $this->get_field_description($args);
         echo $html;
     }
@@ -834,6 +842,23 @@ class white_label_Settings_Api
     }
 
     /**
+     * Show menu.
+     */
+    public function show_menu()
+    {
+        $html = '';
+
+        $html .= '<ul>';
+
+        foreach ($this->settings_sections as $tab) {
+            $html .= sprintf('<li id="%1$s-tab"><a href="#%1$s"><span class="dashicons %2$s"></span> %3$s</a></li>', $tab['id'], $tab['icon'], $tab['title']);
+        }
+        $html .= '</ul>';
+
+        echo $html;
+    }
+
+    /**
      * Show navigations as tab.
      *
      * Shows all the settings section labels as tab.
@@ -860,10 +885,16 @@ class white_label_Settings_Api
      */
     public function show_forms()
     {
+
+        echo '<div class="wrap"><h1></h1></div>'; // Hack to get notices to display where we want them.
         echo '<div class="white-label-metabox-wrapper white-label-form-wrapper">';
 
         foreach ($this->settings_sections as $form) {
             echo '<div id="'.$form['id'].'" class="group" style="display: none;">';
+
+            if ($form['title'] != 'Upgrade') {
+                echo '<h1>'.__($form['title'], 'white-label').'</h1>';
+            }
 
             if (isset($form['custom_tab']) && $form['custom_tab'] === true) {
                 // Allow custom tabs.
@@ -881,7 +912,7 @@ class white_label_Settings_Api
 
                 if (isset($this->settings_fields[$form['id']]) && (isset($form['id']) && $form['id'] != 'white_label_pro_license')) {
                     echo '<div class="white-label-submit-button">';
-                    submit_button(__('Save Settings', 'white-label'), 'primary', 'submit', true, ['id' => $form['id']]);
+                    submit_button(sprintf(__('Save %1$s Settings', 'white_label'), $form['title']), 'primary', 'submit', true, ['id' => $form['id']]);
                     echo '</div>';
                 }
                 echo '</form>';
@@ -890,35 +921,6 @@ class white_label_Settings_Api
         }
 
         echo '</div>'; // end wrap.
-    }
-
-    /**
-     * Display sidebar and each box.
-     */
-    public function show_sidebar()
-    {
-        if (!$this->settings_sidebar) {
-            return;
-        }
-
-        echo '<div class="white-label-sidebar">';
-
-        do_action('white_label'.'_above_settings_sidebars');
-
-        foreach ($this->settings_sidebar as $sidebar) {
-            echo '<div class="white-label-metabox">';
-            echo '<div class="postbox">';
-            echo '<div class="inside">';
-            echo '<h3>'.$sidebar['title'].'</h3>';
-            echo '<p>'.$sidebar['content'].'</p>';
-            echo '</div> ';
-            echo '</div> ';
-            echo '</div> ';
-        }
-
-        echo '</div> ';
-
-        do_action('white_label'.'_below_settings_sidebars');
     }
 
 }

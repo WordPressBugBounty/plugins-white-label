@@ -27,6 +27,15 @@ function white_label_free_upgrade()
 
         <div class="white-label-grid">
             <div>
+                <a target="_blank" href="https://whitewp.com/documentation/article/wordpress-login-url/">
+                    <img src="https://whitewp.com/wp-content/uploads/2024/10/featured-wordpress-login-url-300x158.png">
+                </a>
+                <h3>Change Login URL</h3>
+                <p>Change the default WordPress login URL to an address of your own choosing.</p>
+                <a class="white-label-learn-more" target="_blank" href="https://whitewp.com/documentation/article/wordpress-login-url/">Learn More</a>
+            </div>
+
+            <div>
                 <a target="_blank" href="https://whitewp.com/documentation/article/rename-wordpress-admin-menus/">
                     <img src="https://whitewp.com/wp-content/uploads/2022/04/featured-rename-wordpress-admin-menus-300x158.png">
                 </a>

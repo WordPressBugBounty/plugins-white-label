@@ -132,3 +132,42 @@ function white_label_sidebar_menu_width()
 }
 
 add_action('admin_head', 'white_label_sidebar_menu_width');
+
+
+/**
+ * Add sidebar menu logo.
+ *
+ * @return void
+ */
+function white_label_sidebar_menu_logo()
+{
+    $white_label_sidebar_menu_logo = white_label_get_option('sidebar_menu_logo', 'white_label_menus', '');
+    
+    if (!empty($white_label_sidebar_menu_logo)) {
+        add_menu_page('Logo', 'Logo', 'read', 'sidebar_menu_logo', '', '', 1);
+    }
+}
+
+add_action('admin_menu', 'white_label_sidebar_menu_logo');
+
+/**
+ * Apply sidebar menu logo CSS.
+ *
+ * @return void
+ */
+function white_label_sidebar_menu_logo_css()
+{
+    $white_label_sidebar_menu_logo = white_label_get_option('sidebar_menu_logo', 'white_label_menus', '');
+    
+    if (!empty($white_label_sidebar_menu_logo)) {
+        $white_label_sidebar_menu_logo_height = white_label_get_option('sidebar_menu_logo_height', 'white_label_menus', '100');
+
+        echo '<style type="text/css">
+        #toplevel_page_sidebar_menu_logo { margin-bottom: 10px !important; height:'.$white_label_sidebar_menu_logo_height.'px; background-image: url('.$white_label_sidebar_menu_logo.'); background-position: center center; background-repeat: no-repeat; background-size: contain; }
+        #toplevel_page_sidebar_menu_logo:hover { background-color: inherit !important; }
+        #toplevel_page_sidebar_menu_logo a { display: none !important; }
+        </style>';
+    }
+}
+
+add_action('admin_head', 'white_label_sidebar_menu_logo_css');

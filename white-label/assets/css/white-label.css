@@ -2,11 +2,6 @@
     display: none;
 }
 
-.white-label-admin .notice {
-    margin-top: 1em;
-    margin-bottom: 0;
-}
-
 #white-label-header {
     width: calc(100% + 20px);
     margin-left: -20px;
@@ -56,8 +51,84 @@
     border-radius: 4px;
 }
 
+.white-label-admin {
+    width: calc(100% + 20px);
+    margin-left: -20px;
+    border-bottom: 1px solid #cdcdcd;
+    display: block;
+    overflow: hidden;
+    background-image: url(../img/white-label-wrapper.png);
+    background-position: top left;
+    background-repeat: repeat-y;
+}
+
 body.rtl .white-label-admin {
     background: inherit;
+}
+
+#white-label-pane-left {
+    float: left;
+    width: 220px;
+    height: 100vh;
+    background-color: #ffffff;
+    border-right: 1px solid #cdcdcd;
+}
+
+#white-label-pane-left ul {
+    margin: 0;
+    padding: 0;
+    list-style: none;
+}
+
+#white-label-pane-left ul li {
+    margin: 0;
+    padding: 0;
+    border-bottom: 1px solid #cdcdcd;
+}
+
+#white-label-pane-left ul li span.dashicons {
+    color: #cdcdcd;
+}
+
+#white-label-pane-left ul li.active span.dashicons, #white-label-pane-left ul li:hover span.dashicons {
+    color: #0053CC;
+}
+
+#white-label-pane-left ul li a {
+    padding: 6px 12px;
+    display: block;
+    width: calc(100% - 24px);
+    text-decoration: none;
+    color: #5b5b5b;
+}
+
+#white-label-pane-left ul li.active a:focus {
+    outline: 1px solid #0053CC;
+}
+
+#white-label-pane-left ul li.active a, #white-label-pane-left ul li:hover a {
+    color: #0053CC;
+}
+
+#white-label-pane-right {
+    float: left;
+    width: calc(100% - 276px);
+    padding: 0.5em 2em 2em 2em;
+}
+
+#white-label-pane-right .wrap {
+    margin: 0;
+}
+
+#white-label-pane-right h1 {
+    margin: 0;
+    font-size: 1.75em;
+}
+
+#white-label-pane-right h2 {
+    margin-top: 2em;
+    margin-bottom: 0.5em;
+    font-size: 1.35em;
 }
 
 .white-label-admin a.white-label-help {
@@ -211,6 +282,14 @@ h4.white-label-name {
 .white-label-admin .white-label-subsection p.description {
     margin: 4px 0 0 0;
     font-size: 14px;
+}
+
+#white_label_import_export table.form-table td { 
+    padding-left: 0;
+}
+
+#white_label_import_export input[type="file"] {
+    margin-bottom: 12px;
 }
 
 .white-label-upgrade-tab {

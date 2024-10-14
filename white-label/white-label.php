@@ -3,7 +3,7 @@
  * Plugin Name:       White Label
  * Plugin URI:        https://whitewp.com/
  * Description:       White Label WordPress and make life easier for your clients.
- * Version:           2.13.4
+ * Version:           2.14.0
  * Author:            WhiteWP.com
  * Author URI:        https://whitewp.com/
  *
@@ -39,7 +39,7 @@ class WHITEWP_Init
     {
         $this->constants = [
             'name' => 'White Label',
-            'version' => '2.13.4',
+            'version' => '2.14.0',
             'slug' => plugin_basename(__FILE__, ' . php'),
             'base' => plugin_basename(__FILE__),
             'name_sanitized' => basename(__FILE__, '. php'),
@@ -67,6 +67,9 @@ class WHITEWP_Init
 
         // Activation
         register_activation_hook(__FILE__, [$this, 'activation']);
+
+        // Dectivation
+        register_deactivation_hook(__FILE__, [$this, 'deactivation']);
 
         // Load plugin when all plugins are loaded.
         add_action('plugins_loaded', [$this, 'load_textdomain']);
@@ -110,6 +113,12 @@ class WHITEWP_Init
             'success',
             $text
         );
+
+
+    }
+
+    public function deactivation()
+    {
     }
 
     /**

@@ -101,48 +101,56 @@ class white_label_Admin_Settings
         $sections['white_label_general'] = [
             'id' => 'white_label_general',
             'title' => __('General', 'white_label'),
-            'requires_verification' => false,
-        ];
-
-        $sections['white_label_login'] = [
-            'id' => 'white_label_login',
-            'title' => __('Login', 'white_label'),
+            'icon' => 'dashicons-admin-generic',
             'requires_verification' => false,
         ];
 
         $sections['white_label_visual_tweaks'] = [
             'id' => 'white_label_visual_tweaks',
             'title' => __('Admin', 'white-label'),
-            'requires_verification' => false,
-        ];
-
-        $sections['white_label_dashboard'] = [
-            'id' => 'white_label_dashboard',
-            'title' => __('Dashboard', 'white-label'),
-            'requires_verification' => false,
-        ];
-
-        $sections['white_label_menus'] = [
-            'id' => 'white_label_menus',
-            'title' => __('Menus', 'white-label'),
-            'requires_verification' => false,
-        ];
-        
-        $sections['white_label_plugins'] = [
-            'id' => 'white_label_plugins',
-            'title' => __('Plugins', 'white-label'),
-            'requires_verification' => false,
-        ];
-        
-        $sections['white_label_themes'] = [
-            'id' => 'white_label_themes',
-            'title' => __('Themes', 'white-label'),
+            'icon' => 'dashicons-admin-settings',
             'requires_verification' => false,
         ];
 
         $sections['white_label_front_end'] = [
             'id' => 'white_label_front_end',
             'title' => __('Front End', 'white_label'),
+            'icon' => 'dashicons-welcome-view-site',
+            'requires_verification' => false,
+        ];
+
+        $sections['white_label_login'] = [
+            'id' => 'white_label_login',
+            'title' => __('Login', 'white_label'),
+            'icon' => 'dashicons-id',
+            'requires_verification' => false,
+        ];
+
+        $sections['white_label_dashboard'] = [
+            'id' => 'white_label_dashboard',
+            'title' => __('Dashboard', 'white-label'),
+            'icon' => 'dashicons-dashboard',
+            'requires_verification' => false,
+        ];
+
+        $sections['white_label_menus'] = [
+            'id' => 'white_label_menus',
+            'title' => __('Menus', 'white-label'),
+            'icon' => 'dashicons-menu-alt',
+            'requires_verification' => false,
+        ];
+        
+        $sections['white_label_plugins'] = [
+            'id' => 'white_label_plugins',
+            'title' => __('Plugins', 'white-label'),
+            'icon' => 'dashicons-admin-plugins',
+            'requires_verification' => false,
+        ];
+        
+        $sections['white_label_themes'] = [
+            'id' => 'white_label_themes',
+            'title' => __('Themes', 'white-label'),
+            'icon' => 'dashicons-admin-appearance',
             'requires_verification' => false,
         ];
 
@@ -151,6 +159,7 @@ class white_label_Admin_Settings
             $sections['white_label_multisite'] = [
                 'id' => 'white_label_multisite',
                 'title' => __('Multisite', 'white_label'),
+                'icon' => 'dashicons-admin-multisite',
                 'requires_verification' => false,
             ];
         }
@@ -158,6 +167,7 @@ class white_label_Admin_Settings
         $sections['white_label_import_export'] = [
             'id' => 'white_label_import_export',
             'title' => __('Import & Export', 'white-label'),
+            'icon' => 'dashicons-database-import',
             'requires_verification' => false,
             'custom_tab' => true,
         ];
@@ -165,6 +175,7 @@ class white_label_Admin_Settings
         $sections['white_label_upgrade'] = [
             'id' => 'white_label_upgrade',
             'title' => __('Upgrade', 'white-label'),
+            'icon' => 'dashicons-admin-settings',
             'requires_verification' => false,
         ];
 
@@ -214,7 +225,7 @@ class white_label_Admin_Settings
 
         $fields['white_label_login'] = [
             [
-                'name' => 'login_section',
+                'name' => 'template_section',
                 'label' => __('Template', 'white-label'),
                 'desc' => __('Set the template of the login page.', 'white-label'),
                 'type' => 'subheading',
@@ -636,6 +647,23 @@ class white_label_Admin_Settings
                 'max' => '300',
             ],
             [
+                'name' => 'sidebar_menu_logo',
+                'label' => __('Sidebar Menu Logo', 'white-label').'<a target="_blank" tabindex="-1" class="white-label-help" href="https://whitewp.com/documentation/article/wordpress-admin-sidebar-menu-logo/"><span class="dashicons dashicons-editor-help"></span></a>',
+                'desc' => __('Add a logo to the sidebar menu.', 'white-label'),
+                'type' => 'file',
+                'default' => '',
+                'options' => [
+                    'button_label' => __('Choose Logo', 'white-label'),
+                ],
+            ],
+            [
+                'name' => 'sidebar_menu_logo_height',
+                'label' => __('Sidebar Menu Logo Height', 'white-label'),
+                'desc' => __('Height of sidebar menu logo in pixels.', 'white-label'),
+                'type' => 'number',
+                'default' => '100',
+            ],
+            [
                 'name' => 'sidebar_menus',
                 'label' => '',
                 'desc' => '',
@@ -650,7 +678,7 @@ class white_label_Admin_Settings
         $fields['white_label_plugins'] = [
             [
                 'name' => 'plugins_section',
-                'label' => __('Plugins', 'white-label'),
+                'label' => __('Installed Plugins', 'white-label'),
                 'desc' => $desc_plugins_section,
                 'type' => 'subheading',
                 'class' => 'subheading',
@@ -670,7 +698,7 @@ class white_label_Admin_Settings
         $fields['white_label_themes'] = [
             [
                 'name' => 'plugins_section',
-                'label' => __('Themes', 'white-label'),
+                'label' => __('Installed Themes', 'white-label'),
                 'desc' => $desc_themes_section,
                 'type' => 'subheading',
                 'class' => 'subheading',
@@ -798,24 +826,28 @@ class white_label_Admin_Settings
     {
         echo '<div id="white-label-header">';
         echo '<div id="white-label-header-version">';
-        echo '<b>White Label</b> &middot; v2.13.4';
-        echo '</div>';
+        echo '<b>White Label</b> &middot; v2.14.0';
+        echo '</div>'; // #white-label-header-version
     
         echo '<div id="white-label-header-links">';
         echo '<a href="https://whitewp.com/documentation?utm_source=plugin_white_label&utm_content=documentation" target="_blank">'.__('Documentation', 'white-label').'</a> | ';
         echo '<a href="https://whitewp.com/support?utm_source=plugin_white_label&utm_content=support" target="_blank">'.__('Support', 'white-label').'</a> | ';
         echo '<a href="https://whitewp.com/feedback?utm_source=plugin_white_label&utm_content=feedback" target="_blank">'.__('Feedback', 'white-label').'</a>';
-        ?>
-        <a class="white-label-upgrade" target="_blank" href="https://whitewp.com/pro?utm_source=plugin_white_label&utm_content=upgrade"><?php echo __('Get White Label Pro', 'white-label'); ?></a>
-        <?php
-        echo '</div>';
-        echo '</div>';
+        ?><a class="white-label-upgrade" target="_blank" href="https://whitewp.com/pro?utm_source=plugin_white_label&utm_content=upgrade"><?php echo __('Get White Label Pro', 'white-label'); ?></a><?php
+        echo '</div>'; // #white-label-header-links
+        echo '</div>'; // #white-label-header
 
-        echo '<div class="wrap white-label-admin">';
-        $this->settings_api->show_navigation();
-        // $this->settings_api->show_sidebar();
+        echo '<div class="white-label-admin">';
+        echo '<div id="white-label-pane-left">';
+        $this->settings_api->show_menu();
+        echo '</div>'; // #white-label-pane-left
+
+        // $this->settings_api->show_navigation();
+        echo '<div id="white-label-pane-right">';
         $this->settings_api->show_forms();
-        echo '</div>';
+        echo '</div>'; // #white-label-pane-right
+
+        echo '</div>'; // .white-label-admin
     }
 
     /**
@@ -853,7 +885,7 @@ class white_label_Admin_Settings
         $wl_panel = white_label_get_option('admin_welcome_panel_content', 'white_label_dashboard', false);
 
         if (! empty($wl_panel)) {
-            wp_enqueue_style('white-label-dashboard', plugins_url('assets/css/white-label-dashboard.css', dirname(__FILE__)), null, '2.13.4');
+            wp_enqueue_style('white-label-dashboard', plugins_url('assets/css/white-label-dashboard.css', dirname(__FILE__)), null, '2.14.0');
         }
 
         if ($hook != 'settings_page_white-label') {
@@ -867,7 +899,7 @@ class white_label_Admin_Settings
         wp_enqueue_script('wp-color-picker');
 
         // White Label
-        wp_enqueue_style('white-label', plugins_url('assets/css/white-label.css', dirname(__FILE__)), null, '2.13.4');
-        wp_enqueue_script('white-label', plugins_url('assets/js/white-label.min.js', dirname(__FILE__)), ['jquery'], '2.13.4');
+        wp_enqueue_style('white-label', plugins_url('assets/css/white-label.css', dirname(__FILE__)), null, '2.14.0');
+        wp_enqueue_script('white-label', plugins_url('assets/js/white-label.min.js', dirname(__FILE__)), ['jquery'], '2.14.0');
     }
 }

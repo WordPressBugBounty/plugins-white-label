@@ -6,7 +6,7 @@ Author: WhiteWP.com
 Requires at least: 5.0
 Tested up to: 6.6
 Requires PHP: 7.4
-Stable tag: 2.13.4
+Stable tag: 2.14.0
 License: GPLv2 or later
 License URI: https://www.gnu.org/licenses/gpl-2.0.html
 
@@ -85,6 +85,7 @@ White Label is made for those who want to build a custom admin for WordPress. He
 ## White Label Pro
 [White Label Pro](https://whitewp.com?utm_source=readme&utm_medium=plugin-repository&utm_content=white-label-pro) is the premium version of our plugin. It's designed specifically for WordPress professionals who require an extra level of customization. Its features include:
 
+* Change WordPress login URL
 * Rename admin menu items
 * Change admin menu icons
 * Change plugin details like name, description, links, etc.
@@ -159,6 +160,13 @@ Yes, White Label Multisite is supported. [Please visit our website to learn more
 11. White Label Front End Settings
 
 == Changelog ==
+
+= 2.14.0 =
+* Replaced tabs with new sidebar navigation.
+* New "Sidebar Menu Logo" option under "Menus" settings.
+* Pro: New "Login" feature to change the WordPress login URL. Not available for Multisite.
+* Interface changes.
+* Bug fixes.
 
 = 2.13.4 =
 * Bug fixes and performance improvements for Elementor-related features.

@@ -64,8 +64,6 @@ add_action('wp_loaded', 'white_label_migrate_settings', 1);
 
 function white_label_migrate_old_settings()
 {
-    error_log('white_label_migrate_old_settings()');
-
     // Free Settings.
     $section_start = get_option('white_label_section_start', false); // enable button.
     $company_name = get_option('white_label_company_name', false);

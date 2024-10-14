@@ -86,6 +86,13 @@ function white_label_admin_bar_logo($wp_admin_bar)
             $wp_admin_bar->remove_menu('learn');
             $wp_admin_bar->remove_menu('support-forums');
             $wp_admin_bar->remove_menu('feedback');
+
+            // Remove WordPress Logo from Block Editor Menu
+            echo '
+                <style type="text/css">
+                .block-editor #editor .edit-post-fullscreen-mode-close.components-button svg { display: none !important; }
+                </style>
+                ';
         }
     }
 
@@ -102,6 +109,13 @@ function white_label_admin_bar_logo($wp_admin_bar)
             #wpadminbar #wp-admin-bar-wp-logo.hover > .ab-item .ab-icon {
             background-position: center;
             background-size:cover;
+            }
+
+            .block-editor #editor .edit-post-fullscreen-mode-close.components-button svg { display: none !important; }
+            .block-editor #editor .edit-post-fullscreen-mode-close.components-button:before {
+            background-image: url('.esc_url($admin_replace_wp_logo).') !important;
+            background-position: center;
+            background-size:contain;
             }
             </style>
             ';
