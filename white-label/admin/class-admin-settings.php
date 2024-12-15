@@ -788,7 +788,7 @@ class white_label_Admin_Settings
         global $pagenow;
 
         // Make sure we are on a settings page. We can't check for specific at admin_init.
-        if ($pagenow === 'options-general.php' || $pagenow === 'options.php') {
+        if ($pagenow === 'admin.php' || $pagenow === 'options-general.php' || $pagenow === 'options.php') {
             $this->settings_api = new white_label_Settings_Api($this->constants);
             
             $this->settings_api->set_sections($this->sections());
@@ -826,7 +826,7 @@ class white_label_Admin_Settings
     {
         echo '<div id="white-label-header">';
         echo '<div id="white-label-header-version">';
-        echo '<b>White Label</b> &middot; v2.14.0';
+        echo '<b>White Label</b> &middot; v2.14.1';
         echo '</div>'; // #white-label-header-version
     
         echo '<div id="white-label-header-links">';
@@ -885,7 +885,7 @@ class white_label_Admin_Settings
         $wl_panel = white_label_get_option('admin_welcome_panel_content', 'white_label_dashboard', false);
 
         if (! empty($wl_panel)) {
-            wp_enqueue_style('white-label-dashboard', plugins_url('assets/css/white-label-dashboard.css', dirname(__FILE__)), null, '2.14.0');
+            wp_enqueue_style('white-label-dashboard', plugins_url('assets/css/white-label-dashboard.css', dirname(__FILE__)), null, '2.14.1');
         }
 
         if ($hook != 'settings_page_white-label') {
@@ -899,7 +899,7 @@ class white_label_Admin_Settings
         wp_enqueue_script('wp-color-picker');
 
         // White Label
-        wp_enqueue_style('white-label', plugins_url('assets/css/white-label.css', dirname(__FILE__)), null, '2.14.0');
-        wp_enqueue_script('white-label', plugins_url('assets/js/white-label.min.js', dirname(__FILE__)), ['jquery'], '2.14.0');
+        wp_enqueue_style('white-label', plugins_url('assets/css/white-label.css', dirname(__FILE__)), null, '2.14.1');
+        wp_enqueue_script('white-label', plugins_url('assets/js/white-label.min.js', dirname(__FILE__)), ['jquery'], '2.14.1');
     }
 }
