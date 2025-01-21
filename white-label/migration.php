@@ -39,6 +39,25 @@ function white_label_migrate_settings()
         update_option('white_label_plugins', $white_label_plugins);
     }
 
+    // Migrate Plugin - Elementor Settings
+    $plugin_elementor_settings = get_option('white_label_plugins_elementor', []);
+    if (!empty($plugin_settings) && empty($plugin_elementor_settings) && $plugin_elementor_settings !== false) {
+        $white_label_plugins_elementor = [
+            'elementor_hide_logo' => isset($plugin_settings['elementor_hide_logo']) ? $plugin_settings['elementor_hide_logo'] : 'off',
+            'elementor_logo_loading' => isset($plugin_settings['elementor_logo_loading']) ? $plugin_settings['elementor_logo_loading'] : '',
+            'elementor_editor_primary_color' => isset($plugin_settings['elementor_editor_primary_color']) ? $plugin_settings['elementor_editor_primary_color'] : '',
+            'elementor_editor_secondary_color' => isset($plugin_settings['elementor_editor_secondary_color']) ? $plugin_settings['elementor_editor_secondary_color'] : '',
+            'elementor_hide_post_state_text' => isset($plugin_settings['elementor_hide_post_state_text']) ? $plugin_settings['elementor_hide_post_state_text'] : 'off',
+            'elementor_replace_post_state_text' => isset($plugin_settings['elementor_replace_post_state_text']) ? $plugin_settings['elementor_replace_post_state_text'] : '',
+            'elementor_replace_edit_with_elementor_text' => isset($plugin_settings['elementor_replace_edit_with_elementor_text']) ? $plugin_settings['elementor_replace_edit_with_elementor_text'] : '',
+            'elementor_editor_navigation' => isset($plugin_settings['elementor_editor_navigation']) ? $plugin_settings['elementor_editor_navigation'] : [],
+            'elementor_hide_upgrade_nags' => isset($plugin_settings['elementor_hide_upgrade_nags']) ? $plugin_settings['elementor_hide_upgrade_nags'] : 'off',
+            'elementor_hide_pro_widgets' => isset($plugin_settings['elementor_hide_pro_widgets']) ? $plugin_settings['elementor_hide_pro_widgets'] : 'off',
+        ];
+        
+        update_option('white_label_plugins_elementor', $white_label_plugins_elementor);
+    }
+
     // Update 'Remove Dashboard Widgets' Setting
     $admin_remove_default_widgets = white_label_get_option('admin_remove_default_widgets', 'white_label_dashboard', false);
     $admin_remove_dashboard_widgets = white_label_get_option('admin_remove_dashboard_widgets', 'white_label_dashboard', []);

@@ -471,6 +471,7 @@ class white_label_Settings_Api
         echo $html;
     }
 
+
     /**
      * Displays a table for theme settings.
      *
@@ -596,7 +597,8 @@ class white_label_Settings_Api
 
         $title = trim(wp_strip_all_tags($menu->title));
 
-        return ((!$title || empty($title)) ? '-' : $title).' ('.$menu->id.')';
+        // return ((!$title || empty($title)) ? '-' : $title).' ('.$menu->id.')';
+        return ((!$title || empty($title)) ? '-- '.__('Separator', 'white-label').' --' : $title);
     }
 
     /**
@@ -893,7 +895,16 @@ class white_label_Settings_Api
             echo '<div id="'.$form['id'].'" class="group" style="display: none;">';
 
             if ($form['title'] != 'Upgrade') {
-                echo '<h1>'.__($form['title'], 'white-label').'</h1>';
+                echo '<h1>';
+                echo __($form['title'], 'white-label');
+                if (isset($form['help_url']) && !empty($form['help_url'])) {
+                    echo '<a target="_blank" tabindex="-1" class="white-label-help" href="'.$form['help_url'].'"><span class="dashicons dashicons-editor-help"></span></a>';
+                }
+                echo '</h1>';
+            }
+
+            if (isset($form['alert']) && !empty($form['alert'])) {
+                echo '<div class="white-label-alert">'.$form['alert'].'</div>';
             }
 
             if (isset($form['custom_tab']) && $form['custom_tab'] === true) {

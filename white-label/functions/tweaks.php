@@ -29,7 +29,7 @@ function white_label_admin_color_scheme()
     $notifications = esc_html(white_label_get_option('admin_color_scheme_notifications', 'white_label_visual_tweaks', '#d54e21')); // d521cb
     $links = esc_html(white_label_get_option('admin_color_scheme_links', 'white_label_visual_tweaks', '#0073aa')); // 0caa00
     $links_focus = hex_tint($links, -10); // 10dd00
-    $buttons = esc_html(white_label_get_option('admin_color_scheme_buttons', 'white_label_visual_tweaks', '#04a4cc')); // 1300aa
+    $buttons = esc_html(white_label_get_option('admin_color_scheme_buttons', 'white_label_visual_tweaks', '#2371B1')); // 1300aa
     $buttons_darken = hex_tint($buttons, -10);
     $form_fields = esc_html(white_label_get_option('admin_color_scheme_form_fields', 'white_label_visual_tweaks', '#2271b1')); // aa006d?>
     <style type="text/css">

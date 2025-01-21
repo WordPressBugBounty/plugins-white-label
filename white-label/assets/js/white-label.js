@@ -16,7 +16,7 @@ document.addEventListener('DOMContentLoaded', function (e) {
     });
 
     // Modify Settings Tables
-    const settings_tables = ['admin_welcome_panel_content', 'admin_remove_dashboard_widgets', 'admin_widget_content', 'admin_custom_dashboard_content', 'hidden_plugins', 'elementor_editor_navigation', 'hidden_themes', 'sidebar_menus', 'hidden_admin_bar_nodes_backend', 'hidden_admin_bar_nodes_frontend', 'admin_footer_credit'];
+    const settings_tables = ['admin_welcome_panel_content', 'admin_remove_dashboard_widgets', 'admin_widget_content', 'admin_custom_dashboard_content', 'hidden_plugins', 'elementor_editor_navigation', 'gravity_forms_settings_panels', 'hidden_themes', 'sidebar_menus', 'hidden_admin_bar_nodes_backend', 'hidden_admin_bar_nodes_frontend', 'admin_footer_credit'];
     settings_tables.forEach((setting) => {
         jQuery('tr.' + setting + ' th').remove();
         jQuery('tr.' + setting + ' > td:first-of-type').attr('colspan', 2);

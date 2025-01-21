@@ -146,6 +146,18 @@ class white_label_Admin_Settings
             'icon' => 'dashicons-admin-plugins',
             'requires_verification' => false,
         ];
+
+        if (is_plugin_active('elementor/elementor.php') || is_plugin_active('elementor-pro/elementor-pro.php')) {
+            $sections['white_label_plugins_elementor'] = [
+                'id' => 'white_label_plugins_elementor',
+                'title' => __('Elementor', 'white-label'),
+                'icon' => 'dashicons-arrow-right-alt2',
+                'help_url' => 'https://whitewp.com/white-label-elementor/',
+                'alert' => __('Use the settings below to make changes to the Elementor interface. Read our <a target="_blank" href="https://whitewp.com/white-label-elementor/">How to White Label Elementor</a> guide for additional information and setting suggestions for the rest of the WordPress admin interface and menus. Interested in additional Elementor features? Please fill out our <a target="_blank" href="http://whitewp.com/feedback">feedback form</a>.', 'white-label'),
+                'requires_verification' => false,
+            ];
+        }
+
         
         $sections['white_label_themes'] = [
             'id' => 'white_label_themes',
@@ -195,7 +207,7 @@ class white_label_Admin_Settings
             [
                 'name' => 'general_section',
                 'label' => __('White Label', 'white-label'),
-                'desc' => __('Quickly turn on and off all White Label settings.', 'white-label'),
+                'desc' => __('Turn White Label on or off and handle settings data.', 'white-label'),
                 'type' => 'subheading',
                 'class' => 'subheading',
             ],
@@ -205,9 +217,23 @@ class white_label_Admin_Settings
                 'desc' => __('Turn on White Labeling for this site.', 'white-label'),
                 'type' => 'checkbox',
             ],
+        ];
+        
+        if (!is_multisite() || get_main_site_id() == get_current_blog_id()) {
+            $fields['white_label_general'] = array_merge($fields['white_label_general'], [
+                [
+                    'name' => 'delete_settings',
+                    'label' => __('Delete Settings on Uninstall', 'white-label'),
+                    'desc' => __('Delete White Label settings from the database when the plugin is uninstalled.', 'white-label'),
+                    'type' => 'checkbox',
+                ],
+            ]);
+        }
+
+        $fields['white_label_general'] = array_merge($fields['white_label_general'], [
             [
                 'name' => 'wl_admin_sub_section',
-                'label' => __('White Label Administators', 'white-label').'<a target="_blank" tabindex="-1" class="white-label-help" href="https://whitewp.com/documentation/article/white-label-administrators/"><span class="dashicons dashicons-editor-help"></span></a>',
+                'label' => __('White Label Administrators', 'white-label').'<a target="_blank" tabindex="-1" class="white-label-help" href="https://whitewp.com/documentation/article/white-label-administrators/"><span class="dashicons dashicons-editor-help"></span></a>',
                 'desc' => __('A White Label Administrator will bypass other rules set inside the White Label plugin. You will be able to hide sensitive menus, plugins, 
                 updates, and more from all normal administrators. <a target="_blank" tabindex="-1" href="https://whitewp.com/documentation/article/white-label-administrators?utm_source=plugin_white_label&utm_content=general">Learn more about White Label Administrators</a>.', 'white-label'),
                 'type' => 'subheading',
@@ -221,7 +247,7 @@ class white_label_Admin_Settings
                 'options' => white_label_get_regular_admins(),
             ],
 
-        ];
+        ]);
 
         $fields['white_label_login'] = [
             [
@@ -496,7 +522,7 @@ class white_label_Admin_Settings
                 'name' => 'admin_color_scheme_buttons',
                 'label' => __('Button Backgrounds', 'white-label'),
                 'type' => 'color',
-                'default' => '#04a4cc',
+                'default' => '#2371B1',
             ],
             [
                 'name' => 'admin_color_scheme_form_fields',
@@ -625,14 +651,14 @@ class white_label_Admin_Settings
             ],
         ];
 
-        $desc_sidebar_menus_section = __('Modify sidebar menu items for non-White Label Administrators.', 'white-label');
-        $desc_sidebar_menus_section = __('Modify sidebar menu items for non-White Label Administrators. Rename sidebar menus and change icons by upgrading to <a href="https://whitewp.com/pro?utm_source=plugin_white_label&utm_content=sidebar_menus" target="_blank">White Label Pro</a>.', 'white-label');
+        $desc_sidebar_menus_section = __('Hide, rename, or change icons of sidebar menu items.', 'white-label').' <a target="_blank" tabindex="-1" href="https://whitewp.com/documentation/article/white-label-administrators">'.__('These settings are ignored by White Label Administrators.', 'white-label').'</a>';
+        $desc_sidebar_menus_section = __('Hide sidebar menu items.', 'white-label').' <a target="_blank" tabindex="-1" href="https://whitewp.com/documentation/article/white-label-administrators">'.__('These settings are ignored by White Label Administrators.', 'white-label').'</a> '.__('Rename sidebar menus and change icons by upgrading to <a href="https://whitewp.com/pro?utm_source=plugin_white_label&utm_content=sidebar_menus" target="_blank">White Label Pro</a>.', 'white-label');
 
         $fields['white_label_menus'] = [
             [
-                'name' => 'sidebar_menus_section',
-                'label' => __('Sidebar Menus', 'white-label'),
-                'desc' => $desc_sidebar_menus_section,
+                'name' => 'sidebar_customization_section',
+                'label' => __('Sidebar Customization', 'white-label'),
+                'desc' => __('Customize the sidebar menu by changing its width or adding a logo.', 'white-label'),
                 'type' => 'subheading',
                 'class' => 'subheading',
             ],
@@ -664,6 +690,13 @@ class white_label_Admin_Settings
                 'default' => '100',
             ],
             [
+                'name' => 'sidebar_menus_section',
+                'label' => __('Sidebar Menus', 'white-label'),
+                'desc' => $desc_sidebar_menus_section,
+                'type' => 'subheading',
+                'class' => 'subheading',
+            ],
+            [
                 'name' => 'sidebar_menus',
                 'label' => '',
                 'desc' => '',
@@ -672,8 +705,8 @@ class white_label_Admin_Settings
             ],
         ];
 
-        $desc_plugins_section = __('Hide plugins, or change their details, when users who are not White Label Administrators view the Plugins screen.', 'white-label');
-        $desc_plugins_section = __('Hide plugins when users who are not White Label Administrators view the Plugins screen. Change plugin details by upgrading to <a href="https://whitewp.com/pro?utm_source=plugin_white_label&utm_content=plugins" target="_blank">White Label Pro</a>.', 'white-label');
+        $desc_plugins_section = __('Hide plugins or change their details, when viewing the Plugins screen.', 'white-label').' <a target="_blank" tabindex="-1" href="https://whitewp.com/documentation/article/white-label-administrators">'.__('These settings are ignored by White Label Administrators.', 'white-label').'</a>';
+        $desc_plugins_section = __('Hide plugins when viewing the Plugins screen.', 'white-label').' <a target="_blank" tabindex="-1" href="https://whitewp.com/documentation/article/white-label-administrators">'.__('These settings are ignored by White Label Administrators.', 'white-label').'</a> '.__('Change plugin details by upgrading to <a href="https://whitewp.com/pro?utm_source=plugin_white_label&utm_content=plugins" target="_blank">White Label Pro</a>.', 'white-label');
 
         $fields['white_label_plugins'] = [
             [
@@ -692,8 +725,8 @@ class white_label_Admin_Settings
             ],
         ];
 
-        $desc_themes_section = __('Hide themes, or change their details, when users who are not White Label Administrators view the Themes screen.', 'white-label');
-        $desc_themes_section = __('Hide themes when users who are not White Label Administrators view the Themes screen. Change theme details by upgrading to <a href="https://whitewp.com/pro?utm_source=plugin_white_label&utm_content=themes" target="_blank">White Label Pro</a>.', 'white-label');
+        $desc_themes_section = __('Hide themes, or change their details, when viewing the Themes screen. ', 'white-label').' <a target="_blank" tabindex="-1" href="https://whitewp.com/documentation/article/white-label-administrators">'.__('These settings are ignored by White Label Administrators.', 'white-label').'</a>';
+        $desc_themes_section = __('Hide themes when viewing the Themes screen.', 'white-label').' <a target="_blank" tabindex="-1" href="https://whitewp.com/documentation/article/white-label-administrators">'.__('These settings are ignored by White Label Administrators.', 'white-label').'</a> '.__('Change theme details by upgrading to <a href="https://whitewp.com/pro?utm_source=plugin_white_label&utm_content=themes" target="_blank">White Label Pro</a>.', 'white-label');
 
         $fields['white_label_themes'] = [
             [
@@ -826,7 +859,7 @@ class white_label_Admin_Settings
     {
         echo '<div id="white-label-header">';
         echo '<div id="white-label-header-version">';
-        echo '<b>White Label</b> &middot; v2.14.1';
+        echo '<b>White Label</b> &middot; v2.15.0';
         echo '</div>'; // #white-label-header-version
     
         echo '<div id="white-label-header-links">';
@@ -846,6 +879,12 @@ class white_label_Admin_Settings
         echo '<div id="white-label-pane-right">';
         $this->settings_api->show_forms();
         echo '</div>'; // #white-label-pane-right
+
+        echo '<div class="white-label-footer">';
+	    echo __('A WordPress Plugin by', 'white-label').' <img src="'.plugins_url('/assets/img/linksoftware.png', dirname(__FILE__)).'" alt="Link Software LLC" /> <a href="https://linksoftwarellc.com">Link Software LLC</a>';
+        echo ' &middot; ';
+	    echo __('Learn more at', 'white-label').' <a href="https://whitewp.com">whitewp.com</a>';
+        echo '</div>';
 
         echo '</div>'; // .white-label-admin
     }
@@ -885,7 +924,7 @@ class white_label_Admin_Settings
         $wl_panel = white_label_get_option('admin_welcome_panel_content', 'white_label_dashboard', false);
 
         if (! empty($wl_panel)) {
-            wp_enqueue_style('white-label-dashboard', plugins_url('assets/css/white-label-dashboard.css', dirname(__FILE__)), null, '2.14.1');
+            wp_enqueue_style('white-label-dashboard', plugins_url('assets/css/white-label-dashboard.css', dirname(__FILE__)), null, '2.15.0');
         }
 
         if ($hook != 'settings_page_white-label') {
@@ -899,7 +938,7 @@ class white_label_Admin_Settings
         wp_enqueue_script('wp-color-picker');
 
         // White Label
-        wp_enqueue_style('white-label', plugins_url('assets/css/white-label.css', dirname(__FILE__)), null, '2.14.1');
-        wp_enqueue_script('white-label', plugins_url('assets/js/white-label.min.js', dirname(__FILE__)), ['jquery'], '2.14.1');
+        wp_enqueue_style('white-label', plugins_url('assets/css/white-label.css', dirname(__FILE__)), null, '2.15.0');
+        wp_enqueue_script('white-label', plugins_url('assets/js/white-label.min.js', dirname(__FILE__)), ['jquery'], '2.15.0');
     }
 }
