@@ -465,7 +465,7 @@ msgstr ""
 msgid "Replace the default Welcome Panel content on the WordPress admin dashboard."
 msgstr ""
 
-#: dist/white-label/admin/class-admin-settings.php:586, dist/white-label/admin/class-admin-settings.php:587, dist/white-label/admin/class-admin-settings.php:627, dist/white-label/admin/class-admin-settings.php:628, dist/white-label/admin/class-admin-settings.php:647, dist/white-label/admin/class-admin-settings.php:648, dist/white-label/functions/plugins-elementor.php:136, dist/white-label/functions/plugins-elementor.php:143
+#: dist/white-label/admin/class-admin-settings.php:586, dist/white-label/admin/class-admin-settings.php:587, dist/white-label/admin/class-admin-settings.php:627, dist/white-label/admin/class-admin-settings.php:628, dist/white-label/admin/class-admin-settings.php:647, dist/white-label/admin/class-admin-settings.php:648, dist/white-label/functions/plugins-elementor.php:139, dist/white-label/functions/plugins-elementor.php:146
 msgstr ""
 
 #: dist/white-label/admin/class-admin-settings.php:593
@@ -520,7 +520,7 @@ msgstr ""
 msgid "Hide, rename, or change icons of sidebar menu items."
 msgstr ""
 
-#: dist/white-label/admin/class-admin-settings.php:654, dist/white-label/admin/class-admin-settings.php:655, dist/white-label/admin/class-admin-settings.php:708, dist/white-label/admin/class-admin-settings.php:709, dist/white-label/admin/class-admin-settings.php:728, dist/white-label/admin/class-admin-settings.php:729, dist/white-label/functions/plugins-elementor.php:28, dist/white-label/functions/plugins-elementor.php:51, dist/white-label/functions/plugins-elementor.php:72, dist/white-label/functions/plugins-elementor.php:97, dist/white-label/functions/plugins-elementor.php:128
+#: dist/white-label/admin/class-admin-settings.php:654, dist/white-label/admin/class-admin-settings.php:655, dist/white-label/admin/class-admin-settings.php:708, dist/white-label/admin/class-admin-settings.php:709, dist/white-label/admin/class-admin-settings.php:728, dist/white-label/admin/class-admin-settings.php:729, dist/white-label/functions/plugins-elementor.php:28, dist/white-label/functions/plugins-elementor.php:51, dist/white-label/functions/plugins-elementor.php:72, dist/white-label/functions/plugins-elementor.php:97, dist/white-label/functions/plugins-elementor.php:131
 msgid "These settings are ignored by White Label Administrators."
 msgstr ""
 
@@ -797,7 +797,7 @@ msgid "Loading Logo"
 msgstr ""
 
 #: dist/white-label/functions/plugins-elementor.php:41
-msgid "Replace the Elementor logo on the editor's loading screen."
+msgid "Replace the Elementor logo on the editor's loading screen and the editor's navigation."
 msgstr ""
 
 #: dist/white-label/functions/plugins-elementor.php:50
@@ -861,77 +861,89 @@ msgid "Editor Navigation"
 msgstr ""
 
 #: dist/white-label/functions/plugins-elementor.php:97
-msgid "Hide menu items in the Elementor editor."
+msgid "Hide menu items in the Elementor editor and Elementor settings navigation."
 msgstr ""
 
 #: dist/white-label/functions/plugins-elementor.php:107
-msgid "Site Settings"
-msgstr ""
-
-#: dist/white-label/functions/plugins-elementor.php:108
-msgid "Structure"
-msgstr ""
-
-#: dist/white-label/functions/plugins-elementor.php:109
-msgid "Page Settings"
-msgstr ""
-
-#: dist/white-label/functions/plugins-elementor.php:110
-msgid "Notes"
-msgstr ""
-
-#: dist/white-label/functions/plugins-elementor.php:111
-msgid "What's New"
-msgstr ""
-
-#: dist/white-label/functions/plugins-elementor.php:112
-msgid "Finder"
-msgstr ""
-
-#: dist/white-label/functions/plugins-elementor.php:113
-msgid "Help"
-msgstr ""
-
-#: dist/white-label/functions/plugins-elementor.php:114
-msgid "Preview Changes"
-msgstr ""
-
-#: dist/white-label/functions/plugins-elementor.php:115
 msgid "Theme Builder"
 msgstr ""
 
-#: dist/white-label/functions/plugins-elementor.php:115, dist/white-label/functions/plugins-elementor.php:116, dist/white-label/functions/plugins-elementor.php:117, dist/white-label/functions/plugins-elementor.php:118, dist/white-label/functions/plugins-elementor.php:119
-msgid "Out of Date"
+#: dist/white-label/functions/plugins-elementor.php:108
+msgid "History"
 msgstr ""
 
-#: dist/white-label/functions/plugins-elementor.php:116
+#: dist/white-label/functions/plugins-elementor.php:109
 msgid "User Preferences"
 msgstr ""
 
+#: dist/white-label/functions/plugins-elementor.php:110
+msgid "Keyboard Shortcuts"
+msgstr ""
+
+#: dist/white-label/functions/plugins-elementor.php:111
+msgid "Exit to WordPress"
+msgstr ""
+
+#: dist/white-label/functions/plugins-elementor.php:112
+msgid "Site Settings"
+msgstr ""
+
+#: dist/white-label/functions/plugins-elementor.php:113
+msgid "Structure"
+msgstr ""
+
+#: dist/white-label/functions/plugins-elementor.php:114
+msgid "Notes"
+msgstr ""
+
+#: dist/white-label/functions/plugins-elementor.php:115
+msgid "Page Settings"
+msgstr ""
+
+#: dist/white-label/functions/plugins-elementor.php:116
+msgid "What's New"
+msgstr ""
+
 #: dist/white-label/functions/plugins-elementor.php:117
-msgid "Add-ons"
+msgid "Finder"
 msgstr ""
 
 #: dist/white-label/functions/plugins-elementor.php:118
-msgid "View Page"
+msgid "Help"
 msgstr ""
 
 #: dist/white-label/functions/plugins-elementor.php:119
-msgid "Exit"
+msgid "Preview Changes"
 msgstr ""
 
-#: dist/white-label/functions/plugins-elementor.php:127
+#: dist/white-label/functions/plugins-elementor.php:120
+msgid "Add-ons"
+msgstr ""
+
+#: dist/white-label/functions/plugins-elementor.php:121
+msgid "Connect Account"
+msgstr ""
+
+#: dist/white-label/functions/plugins-elementor.php:122
+msgid "View Page"
+msgstr ""
+
+#: dist/white-label/functions/plugins-elementor.php:122
+msgid "Out of Date"
+msgstr ""
+
+#: dist/white-label/functions/plugins-elementor.php:130
 msgid "Elementor Pro"
 msgstr ""
 
-#: dist/white-label/functions/plugins-elementor.php:128
+#: dist/white-label/functions/plugins-elementor.php:131
 msgid "Hide Elementor Pro upsells and unavailable features."
 msgstr ""
 
-#: dist/white-label/functions/plugins-elementor.php:135
+#: dist/white-label/functions/plugins-elementor.php:138
 msgid "Hide Upgrade Nags"
 msgstr ""
 
-#: dist/white-label/functions/plugins-elementor.php:142
+#: dist/white-label/functions/plugins-elementor.php:145
 msgid "Hide Pro Widgets"
 msgstr ""

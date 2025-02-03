@@ -38,7 +38,7 @@ function white_label_settings_elementor($fields)
             [
                 'name' => 'elementor_logo_loading',
                 'label' => __('Loading Logo', 'white-label').'<a target="_blank" tabindex="-1" class="white-label-help" href="https://whitewp.com/documentation/article/replace-elementor-loading-logo/"><span class="dashicons dashicons-editor-help"></span></a>',
-                'desc' => __('Replace the Elementor logo on the editor\'s loading screen.', 'white-label'),
+                'desc' => __('Replace the Elementor logo on the editor\'s loading screen and the editor\'s navigation.', 'white-label'),
                 'type' => 'file',
                 'default' => '',
                 'options' => [
@@ -94,7 +94,7 @@ function white_label_settings_elementor($fields)
             [
                 'name' => 'plugins_elementor_branding_navigation_editor_grouping',
                 'label' => __('Editor Navigation', 'white-label').'<a target="_blank" tabindex="-1" class="white-label-help" href="https://whitewp.com/documentation/article/elementor-editor-navigation/"><span class="dashicons dashicons-editor-help"></span></a>',
-                'desc' => __('Hide menu items in the Elementor editor.', 'white-label').' <a target="_blank" tabindex="-1" href="https://whitewp.com/documentation/article/white-label-administrators">'.__('These settings are ignored by White Label Administrators.', 'white-label').'</a>',
+                'desc' => __('Hide menu items in the Elementor editor and Elementor settings navigation.', 'white-label').' <a target="_blank" tabindex="-1" href="https://whitewp.com/documentation/article/white-label-administrators">'.__('These settings are ignored by White Label Administrators.', 'white-label').'</a>',
                 'type' => 'subheading',
                 'class' => 'subheading',
             ],
@@ -104,19 +104,22 @@ function white_label_settings_elementor($fields)
                 'desc' => '',
                 'type' => 'elementor_editor_navigation',
                 'options' => [
+                    'theme-builder' => __('Theme Builder', 'white-label'),
+                    'history' => __('History', 'white-label'),
+                    'user-preferences' => __('User Preferences', 'white-label'),
+                    'keyboard-shortcuts' => __('Keyboard Shortcuts', 'white-label'),
+                    'exit' => __('Exit to WordPress', 'white-label'),
                     'site-settings' => __('Site Settings', 'white-label'),
                     'structure' => __('Structure', 'white-label'),
-                    'page-settings' => __('Page Settings', 'white-label'),
                     'notes' => __('Notes', 'white-label'),
+                    'page-settings' => __('Page Settings', 'white-label'),
                     'whats-new' => __('What\'s New', 'white-label'),
                     'finder' => __('Finder', 'white-label'),
                     'help' => __('Help', 'white-label'),
                     'preview-changes' => __('Preview Changes', 'white-label'),
-                    'theme-builder' => __('Theme Builder', 'white-label').' &middot; <small>'.__('Out of Date', 'white-label').'</small>',
-                    'user-preferences' => __('User Preferences', 'white-label').' &middot; <small>'.__('Out of Date', 'white-label').'</small>',
-                    'add-ons' => __('Add-ons', 'white-label').' &middot; <small>'.__('Out of Date', 'white-label').'</small>',
+                    'add-ons' => __('Add-ons', 'white-label'),
+                    'connect-account' => __('Connect Account', 'white-label'),
                     'view-page' => __('View Page', 'white-label').' &middot; <small>'.__('Out of Date', 'white-label').'</small>',
-                    'exit' => __('Exit', 'white-label').' &middot; <small>'.__('Out of Date', 'white-label').'</small>',
                 ],
             ],
         ];
@@ -181,9 +184,12 @@ function white_label_elementor_editor_css()
         <?php if ($elementor_hide_logo === 'on') : ?>
         .elementor-loader,
         #elementor-panel-header-title img,
-        #elementor-editor-button i.eicon-elementor-square,
-        .MuiToolbar-root .MuiBox-root .MuiGrid-root [class$="up134l"] {
+        #elementor-editor-button i.eicon-elementor-square {
             display: none !important;
+        }
+
+        .MuiToolbar-root .MuiBox-root .MuiGrid-root:nth-of-type(1) .MuiStack-root:nth-of-type(1) .MuiToggleButton-root svg {
+            opacity: 0 !important;
         }
         <?php endif; ?>
         
@@ -205,6 +211,14 @@ function white_label_elementor_editor_css()
             background-size: contain;
             background-position: center;
         }
+
+        .MuiToolbar-root .MuiBox-root .MuiGrid-root:nth-of-type(1) .MuiStack-root:nth-of-type(1) .MuiToggleButton-root {
+            background-image: url(<?php echo $elementor_logo_loading; ?>);
+            background-repeat: no-repeat;
+            background-size: contain;
+            background-position: center;
+        }
+
         <?php endif; ?>
 
         <?php if ($elementor_logo_panel) : ?>
@@ -259,9 +273,42 @@ function white_label_elementor_editor_css()
         }
         <?php endif; ?>
 
+        <?php if (is_array($elementor_editor_navigation) && isset($elementor_editor_navigation['theme-builder'])) : ?>
+        .elementor-panel-menu-items .elementor-panel-menu-item-site-editor,
+        .MuiPaper-root .MuiList-root:nth-of-type(1) div.MuiMenuItem-root:nth-of-type(1) {
+            display: none;
+        }
+        <?php endif; ?>
+
+        <?php if (is_array($elementor_editor_navigation) && isset($elementor_editor_navigation['history'])) : ?>
+        .MuiPaper-root .MuiList-root:nth-of-type(1) div.MuiMenuItem-root:nth-of-type(2) {
+            display: none;
+        }
+        <?php endif; ?>
+
+        <?php if (is_array($elementor_editor_navigation) && isset($elementor_editor_navigation['user-preferences'])) : ?>
+        .elementor-panel-menu-items .elementor-panel-menu-item-editor-preferences,
+        .MuiPaper-root .MuiList-root:nth-of-type(1) div.MuiMenuItem-root:nth-of-type(3) {
+            display: none;
+        }
+        <?php endif; ?>
+
+        <?php if (is_array($elementor_editor_navigation) && isset($elementor_editor_navigation['keyboard-shortcuts'])) : ?>
+        .MuiPaper-root .MuiList-root:nth-of-type(1) div.MuiMenuItem-root:nth-of-type(4) {
+            display: none;
+        }
+        <?php endif; ?>
+
         <?php if (is_array($elementor_editor_navigation) && isset($elementor_editor_navigation['site-settings'])) : ?>
         .elementor-panel-menu-items .elementor-panel-menu-item-global-settings,
         .MuiToolbar-root .MuiBox-root .MuiGrid-root .MuiStack-root:nth-of-type(2) .MuiBox-root:nth-of-type(2) {
+            display: none;
+        }
+        <?php endif; ?>
+
+        <?php if (is_array($elementor_editor_navigation) && isset($elementor_editor_navigation['exit'])) : ?>
+        .elementor-panel-menu-items .elementor-panel-menu-item-exit,
+        .MuiPaper-root .MuiList-root:nth-of-type(1) a.MuiMenuItem-root:nth-of-type(1) {
             display: none;
         }
         <?php endif; ?>
@@ -311,18 +358,6 @@ function white_label_elementor_editor_css()
         }
         <?php endif; ?>
 
-        <?php if (is_array($elementor_editor_navigation) && isset($elementor_editor_navigation['theme-builder'])) : ?>
-        .elementor-panel-menu-items .elementor-panel-menu-item-site-editor {
-            display: none;
-        }
-        <?php endif; ?>
-
-        <?php if (is_array($elementor_editor_navigation) && isset($elementor_editor_navigation['user-preferences'])) : ?>
-        .elementor-panel-menu-items .elementor-panel-menu-item-editor-preferences {
-            display: none;
-        }
-        <?php endif; ?>
-
         <?php if (is_array($elementor_editor_navigation) && isset($elementor_editor_navigation['add-ons'])) : ?>
         .elementor-panel-menu-items .elementor-panel-menu-item-apps {
             display: none;
@@ -331,12 +366,6 @@ function white_label_elementor_editor_css()
 
         <?php if (is_array($elementor_editor_navigation) && isset($elementor_editor_navigation['view-page'])) : ?>
         .elementor-panel-menu-items .elementor-panel-menu-item-view-page {
-            display: none;
-        }
-        <?php endif; ?>
-
-        <?php if (is_array($elementor_editor_navigation) && isset($elementor_editor_navigation['exit'])) : ?>
-        .elementor-panel-menu-items .elementor-panel-menu-item-exit {
             display: none;
         }
         <?php endif; ?>
@@ -388,12 +417,18 @@ function white_label_elementor_admin_css()
 
     $elementor_hide_logo = white_label_get_option('elementor_hide_logo', 'white_label_plugins_elementor', 'off');
     $elementor_logo_loading = white_label_get_option('elementor_logo_loading', 'white_label_plugins_elementor', false);
+    $elementor_editor_navigation = white_label_get_option('elementor_editor_navigation', 'white_label_plugins_elementor', []);
     $elementor_hide_upgrade_nags = white_label_get_option('elementor_hide_upgrade_nags', 'white_label_plugins_elementor', 'off');
     $elementor_hide_pro_widgets = white_label_get_option('elementor_hide_pro_widgets', 'white_label_plugins_elementor', 'off');
     ?>
     <style type="text/css">
         <?php if ($elementor_hide_logo === 'on') : ?>
-        .elementor-loader, #elementor-editor-button i, #elementor-switch-mode-button i {
+        .elementor-loader,
+        .e-logo-wrapper,
+        #elementor-editor-button i,
+        #elementor-switch-mode-button i,
+        #e-dashboard-overview .e-overview__logo,
+        .e-notice .e-notice__icon-wrapper {
             display: none !important;
         }
         <?php endif; ?>
@@ -418,10 +453,35 @@ function white_label_elementor_admin_css()
         }
         <?php endif; ?>
 
+        <?php if (is_array($elementor_editor_navigation) && isset($elementor_editor_navigation['add-ons'])) : ?>
+        .e-admin-top-bar__secondary-area-buttons a:nth-of-type(2) {
+            display: none !important;
+        }
+        <?php endif; ?>
+
+        <?php if (is_array($elementor_editor_navigation) && isset($elementor_editor_navigation['finder'])) : ?>
+        .e-admin-top-bar__secondary-area-buttons a:nth-of-type(3) {
+            display: none !important;
+        }
+        <?php endif; ?>
+
+        <?php if (is_array($elementor_editor_navigation) && isset($elementor_editor_navigation['whats-new'])) : ?>
+        .e-admin-top-bar__secondary-area-buttons button.e-admin-top-bar__bar-button:nth-of-type(1) {
+            display: none !important;
+        }
+        <?php endif; ?>
+
+        <?php if (is_array($elementor_editor_navigation) && isset($elementor_editor_navigation['connect-account'])) : ?>
+        .e-admin-top-bar__secondary-area a:nth-of-type(1) {
+            display: none !important;
+        }
+        <?php endif; ?>
+
         <?php if ($elementor_hide_upgrade_nags === 'on') : ?>
         td.plugin-title span.go_pro,
         a.e-admin-top-bar__bar-button[href*="elementor.com"],
-        a.eps-button--cta[href*="elementor.com"] { 
+        a.eps-button--cta[href*="elementor.com"],
+        #e-dashboard-overview li.e-overview__go-pro { 
             display: none !important;
         }
         <?php endif; ?>
