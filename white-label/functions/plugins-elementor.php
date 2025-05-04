@@ -124,29 +124,27 @@ function white_label_settings_elementor($fields)
             ],
         ];
 
-        if (!is_plugin_active('elementor-pro/elementor-pro.php')) {
-            array_push($fields['white_label_plugins_elementor'], [
-                'name' => 'plugins_elementor_pro_grouping',
-                'label' => __('Elementor Pro', 'white-label'),
-                'desc' => __('Hide Elementor Pro upsells and unavailable features.', 'white-label').' <a target="_blank" tabindex="-1" href="https://whitewp.com/documentation/article/white-label-administrators">'.__('These settings are ignored by White Label Administrators.', 'white-label').'</a>',
-                'type' => 'subheading',
-                'class' => 'subheading',
-            ]);
+        array_push($fields['white_label_plugins_elementor'], [
+            'name' => 'plugins_elementor_pro_upsells_grouping',
+            'label' => __('Elementor Pro Upsells', 'white-label'),
+            'desc' => __('Hide Elementor Pro upsells and unavailable features.', 'white-label').' <a target="_blank" tabindex="-1" href="https://whitewp.com/documentation/article/white-label-administrators">'.__('These settings are ignored by White Label Administrators.', 'white-label').'</a>',
+            'type' => 'subheading',
+            'class' => 'subheading',
+        ]);
 
-            array_push($fields['white_label_plugins_elementor'], [
-                'name' => 'elementor_hide_upgrade_nags',
-                'label' => __('Hide Upgrade Nags', 'white-label').'<a target="_blank" tabindex="-1" class="white-label-help" href="https://whitewp.com/documentation/article/hide-elementor-pro-upgrade-nags/"><span class="dashicons dashicons-editor-help"></span></a>',
-                'desc' => __('', 'white-label'),
-                'type' => 'checkbox',
-            ]);
+        array_push($fields['white_label_plugins_elementor'], [
+            'name' => 'elementor_hide_upgrade_nags',
+            'label' => __('Hide Upgrade Nags', 'white-label').'<a target="_blank" tabindex="-1" class="white-label-help" href="https://whitewp.com/documentation/article/hide-elementor-pro-upgrade-nags/"><span class="dashicons dashicons-editor-help"></span></a>',
+            'desc' => __('', 'white-label'),
+            'type' => 'checkbox',
+        ]);
 
-            array_push($fields['white_label_plugins_elementor'], [
-                'name' => 'elementor_hide_pro_widgets',
-                'label' => __('Hide Pro Widgets', 'white-label').'<a target="_blank" tabindex="-1" class="white-label-help" href="https://whitewp.com/documentation/article/hide-elementor-pro-widgets/"><span class="dashicons dashicons-editor-help"></span></a>',
-                'desc' => __('', 'white-label'),
-                'type' => 'checkbox',
-            ]);
-        }
+        array_push($fields['white_label_plugins_elementor'], [
+            'name' => 'elementor_hide_pro_widgets',
+            'label' => __('Hide Pro Widgets', 'white-label').'<a target="_blank" tabindex="-1" class="white-label-help" href="https://whitewp.com/documentation/article/hide-elementor-pro-widgets/"><span class="dashicons dashicons-editor-help"></span></a>',
+            'desc' => __('', 'white-label'),
+            'type' => 'checkbox',
+        ]);
     }
 
     return $fields;
@@ -481,6 +479,8 @@ function white_label_elementor_admin_css()
         td.plugin-title span.go_pro,
         a.e-admin-top-bar__bar-button[href*="elementor.com"],
         a.eps-button--cta[href*="elementor.com"],
+        a[href*="elementor.com/go-pro-home-sidebar-upgrade"],
+        a[href*="elementor.com/go-pro-element-manager"],
         #e-dashboard-overview li.e-overview__go-pro { 
             display: none !important;
         }

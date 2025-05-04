@@ -15,22 +15,13 @@ function white_label_get_option($option, $section, $default = '')
     if (isset($white_label->constants['multisite']) && !empty($white_label->constants['multisite']) && $white_label->constants['multisite']['global_settings'] == true && $white_label->constants['multisite']['ignore_global_settings'] != true) {
         $options = get_blog_option($white_label->constants['multisite']['main_site'], $section);
     } else {
-        $options = wp_cache_get($section, 'white_label_options');
-    }
-
-    if ($options === false) {
-        $options = get_option($section, 'none');
-
-        if ($options === 'none') {
-            return $default;
-        }
-
-        wp_cache_add($section, $options, 'white_label_options');
+        $options = get_option($section);
     }
 
     if (isset($options[$option])) {
         return $options[$option];
     }
+
     return $default;
 }
 

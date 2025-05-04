@@ -4,9 +4,9 @@ Tags: white label, login page, custom login, custom dashboard, custom admin
 Author URI: https://whitewp.com
 Author: WhiteWP.com
 Requires at least: 5.0
-Tested up to: 6.7
+Tested up to: 6.8
 Requires PHP: 7.4
-Stable tag: 2.15.1
+Stable tag: 2.15.2
 License: GPLv2 or later
 License URI: https://www.gnu.org/licenses/gpl-2.0.html
 
@@ -160,6 +160,9 @@ Yes, White Label Multisite is supported. [Please visit our website to learn more
 11. White Label Front End Settings
 
 == Changelog ==
+
+= 2.15.2 =
+* Bug fixes.
 
 = 2.15.1 =
 * Bug fixes and performance improvements for Elementor-related features.

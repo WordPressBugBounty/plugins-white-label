@@ -3,7 +3,7 @@
  * Plugin Name:       White Label
  * Plugin URI:        https://whitewp.com/
  * Description:       White Label WordPress and make life easier for your clients.
- * Version:           2.15.1
+ * Version:           2.15.2
  * Author:            WhiteWP.com
  * Author URI:        https://whitewp.com/
  *
@@ -39,7 +39,7 @@ class WHITEWP_Init
     {
         $this->constants = [
             'name' => 'White Label',
-            'version' => '2.15.1',
+            'version' => '2.15.2',
             'slug' => plugin_basename(__FILE__, ' . php'),
             'base' => plugin_basename(__FILE__),
             'name_sanitized' => basename(__FILE__, '. php'),
@@ -73,7 +73,7 @@ class WHITEWP_Init
 
         // Load plugin when all plugins are loaded.
         add_action('init', [$this, 'load_textdomain']);
-        add_action('plugins_loaded', [$this, 'init']);
+        add_action('init', [$this, 'init']);
     }
 
     /**
@@ -145,22 +145,17 @@ class WHITEWP_Init
 
         // Import & Export options class.
         include_once plugin_dir_path(__FILE__).'classes/class-import-export.php';
-
-        $options_slug = 'white-label';
-
         $import_export = new white_label_Import_Export_Options();
 
         $sections = $admin_settings->sections();
         // Make sure the general sections isn't imported/exported.
-        if ($sections['white_label_general']) {
+        if (isset($sections['white_label_general'])) {
             unset($sections['white_label_general']);
         }
 
-        $message = __('Success! White Label settings has been imported. Please set your White Label Administrators as they differ from site to site.', 'white-label');
-
-        $import_export->set_completed_message($message);
+        $import_export->set_completed_message(__('Success! White Label settings has been imported. Please set your White Label Administrators as they differ from site to site.', 'white-label'));
         $import_export->set_option_keys($sections);
-        $import_export->set_option_page_slug($options_slug);
+        $import_export->set_option_page_slug('white-label');
 
         $enable_white_label = white_label_get_option('enable_white_label', 'white_label_general', false);
 
