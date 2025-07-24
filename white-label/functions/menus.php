@@ -171,3 +171,50 @@ function white_label_sidebar_menu_logo_css()
 }
 
 add_action('admin_head', 'white_label_sidebar_menu_logo_css');
+
+/**
+ * Add White Label Preview Mode to the admin bar.
+ *
+ * @return void
+ */
+function white_label_preview_mode()
+{
+    global $wp_admin_bar;
+
+    // Check for preview mode parameter
+    if (isset($_GET['white-label-preview-mode']) && sanitize_text_field($_GET['white-label-preview-mode']) === 'Y') {
+        $wp_admin_bar->add_menu([
+            'id' => 'white-label-preview-mode',
+            'title' => __('Viewing White Label Preview Mode', 'white-label'),
+            'href' => remove_query_arg('white-label-preview-mode'),
+            'meta' => [
+                'class' => 'white-label-preview-mode',
+                'title' => __('Viewing White Label Preview Mode', 'white-label'),
+            ],
+        ]);
+
+        return;
+    }
+
+    // Exit early if not WL admin.
+    if (!white_label_is_wl_admin()) {
+        return;
+    }
+
+    if (isset($_GET['page']) && sanitize_text_field($_GET['page']) === 'white-label') {
+        return false;
+    }
+
+    $wp_admin_bar->add_menu([
+        'id' => 'white-label-preview-mode',
+        'title' => __('White Label Preview Mode', 'white-label'),
+        'href' => add_query_arg('white-label-preview-mode', 'Y'),
+        'meta' => [
+            'class' => 'white-label-preview-mode',
+            'target' => '_blank',
+            'title' => __('White Label Preview Mode', 'white-label'),
+        ],
+    ]);
+}
+
+add_action('admin_bar_menu', 'white_label_preview_mode', 9999999999);

@@ -16,6 +16,11 @@ if (!defined('ABSPATH')) {
  */
 function white_label_is_wl_admin($current_user = null)
 {
+    // Check for preview mode parameter
+    if (isset($_GET['white-label-preview-mode']) && sanitize_text_field($_GET['white-label-preview-mode']) === 'Y') {
+        return false;
+    }
+
     if (is_multisite()) {
         // Check if super admin for multisite.
         if (is_super_admin()) {

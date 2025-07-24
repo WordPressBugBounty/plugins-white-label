@@ -6,12 +6,11 @@ Author: WhiteWP.com
 Requires at least: 5.0
 Tested up to: 6.8
 Requires PHP: 7.4
-Stable tag: 2.15.2
+Stable tag: 2.16.0
 License: GPLv2 or later
 License URI: https://www.gnu.org/licenses/gpl-2.0.html
 
 Our White Label WordPress plugin lets you make a custom admin experience. Create a custom login page, a custom dashboard, and much more.
-
 == Description ==
 
 Our White Label WordPress plugin lets you make a custom admin experience for your clients. Create a custom login page, build custom dashboard elements, modify admin menus, and much more. 
@@ -85,6 +84,8 @@ White Label is made for those who want to build a custom admin for WordPress. He
 ## White Label Pro
 [White Label Pro](https://whitewp.com?utm_source=readme&utm_medium=plugin-repository&utm_content=white-label-pro) is the premium version of our plugin. It's designed specifically for WordPress professionals who require an extra level of customization. Its features include:
 
+* White Label Yoast SEO
+* White Label Gravity Forms
 * Change WordPress login URL
 * Rename admin menu items
 * Change admin menu icons
@@ -161,6 +162,13 @@ Yes, White Label Multisite is supported. [Please visit our website to learn more
 
 == Changelog ==
 
+= 2.16.0 =
+* New "White Label Preview Mode" option to view any WordPress admin screen from the perspective of a user who is not a White Label Administrator.
+* New "Checklist" feature under "Elementor Editor Navigation" settings.
+
+= 2.15.3 =
+* New "Link Background Color" option for Login Color Scheme.
+
 = 2.15.2 =
 * Bug fixes.
 
@@ -170,7 +178,6 @@ Yes, White Label Multisite is supported. [Please visit our website to learn more
 = 2.15.0 =
 * New "Delete Settings on Uninstall" option under "General" settings.
 * New "Editor Navigation" options for Elementor.
-* Pro: New settings to white label Gravity Forms.
 * Interface changes.
 * Bug fixes.
 
@@ -180,7 +187,6 @@ Yes, White Label Multisite is supported. [Please visit our website to learn more
 = 2.14.0 =
 * Replaced tabs with new sidebar navigation.
 * New "Sidebar Menu Logo" option under "Menus" settings.
-* Pro: New "Login" feature to change the WordPress login URL. Not available for Multisite.
 * Interface changes.
 * Bug fixes.
 
@@ -189,8 +195,6 @@ Yes, White Label Multisite is supported. [Please visit our website to learn more
 
 = 2.13.3 =
 * Fix for the Howdy Text replacement in the Admin Bar.
-* Pro: Fix for hiding WooCommerce notifications.
-* Pro: Fix for Elementor icon replacement in the WordPress admin menu.
 
 = 2.13.2 =
 * Added notifications when important settings in the "General" tab are missing.
@@ -205,13 +209,11 @@ Yes, White Label Multisite is supported. [Please visit our website to learn more
 = 2.12.0 =
 * Select All checkbox options on Dashboard, Menus, Plugins, and Themes settings.
 * New "Remove Logo Link" and "Replace Logo Link" options under "Admin" settings.
-* Pro: Removed transients for caching admin bar menu items.
 * Interface changes.
 * Minor bug fixes.
 
 = 2.11.0 =
 * New "Themes" section with settings to hide themes.
-* Pro: Modify theme names, screenshots, and action buttons.
 * Interface changes.
 * Minor bug fixes.
 
@@ -239,14 +241,13 @@ Yes, White Label Multisite is supported. [Please visit our website to learn more
 
 = 2.8.0 =
 * New "Button Border Color" option for Login Design.
-* Pro: New "Admin CSS" option in the Visual Tweaks section.
 * Minor bug fixes.
 
 = 2.7.2 =
 * Minor bug fixes.
 
 = 2.7.1 =
-* Pro: Bug fix for "Elementor Dashboard Template" implementation.
+* Minor bug fixes.
 
 = 2.7.0 =
 * New "Menus" setting to adjust the width of the sidebar menu.
@@ -256,7 +257,6 @@ Yes, White Label Multisite is supported. [Please visit our website to learn more
 = 2.6.0 =
 * New "Front End" section with settings to hide the WordPress Version Number.
 * New "Visual Tweaks" setting to remove the WordPress version from the admin footer.
-* Pro: New "Menus & Plugins" setting to change menu icons with Dashicons.
 * Interface changes.
 * Minor bug fixes.
 
@@ -271,34 +271,24 @@ Yes, White Label Multisite is supported. [Please visit our website to learn more
 
 = 2.5.0 =
 * New "Multisite" settings to apply main site's White Label settings to all site's on a network.
-* Pro: New "Menus & Plugins" setting to edit Plugin Details.
-* Pro: New "Miscellaneous" setting to remove Screen Options button.
-* Pro: New "Miscellaneous" setting to remove Help button.
 
 = 2.4.0 =
 * New "Login" settings to set Logo Width and Logo Height.
-* Pro: New "Miscellaneous" setting to Remove Admin Notifications.
 * Changed plugin to require PHP 7.4 or higher.
 * Minor bug fixes.
 
 = 2.3.0 =
 * New "Visual Tweaks" settings to customize the Admin Color Scheme.
 * Remove Dashboard Widgets now allows you to remove all default widgets and/or all third-party widgets.
-* Pro: Remove Dashboard Widgets now allows you to remove widgets individually.
-* Pro: New "Miscellaneous" setting to Disable Administration Email Verification.
-* Pro: Minor bug fix for renamed Sidebar and Admin Bar menu items.
 * Reverted change in 2.2.1: Custom Dashboards once again show for White Label Administrators.
 * Interface changes.
 * Minor bug fixes.
 
 = 2.2.1 =
 * Fixed error where Custom Dashboards were showing for White Label Administrators.
-* Pro: Fixed error with renamed nested sidebar menu items.
 
 = 2.2.0 =
 * New interface for the "Menus & Plugins" section.
-* Pro: Rename sidebar menu items.
-* Pro: Rename admin bar menu items.
 
 = 2.1.5 =
 * File restructuring to make future development easier.
@@ -318,6 +308,3 @@ Yes, White Label Multisite is supported. [Please visit our website to learn more
 
 = 2.1.1 =
 * Ready and tested with WordPress 5.6
-
-= 2.1.0 =
-* Pro: Hide specific admin bar menus on the frontend (while viewing the site) and backend (admin area.)

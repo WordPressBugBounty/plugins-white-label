@@ -27,6 +27,24 @@ function white_label_free_upgrade()
 
         <div class="white-label-grid">
             <div>
+                <a target="_blank" href="https://whitewp.com/white-label-yoast-seo/">
+                    <img src="https://whitewp.com/wp-content/uploads/2025/07/feature-white-label-yoast-seo-300x157.png">
+                </a>
+                <h3>Yoast SEO</h3>
+                <p>White label Yoast SEO by removing branding, premium upsells, and more.</p>
+                <a class="white-label-learn-more" target="_blank" href="https://whitewp.com/white-label-yoast-seo/">Learn More</a>
+            </div>
+            
+            <div>
+                <a target="_blank" href="https://whitewp.com/white-label-gravity-forms/">
+                    <img src="https://whitewp.com/wp-content/uploads/2025/01/feature-white-label-gravity-forms-300x158.png">
+                </a>
+                <h3>Gravity Forms</h3>
+                <p>White label Gravity Forms by customizing the plugin\'s branding, interface, and more.</p>
+                <a class="white-label-learn-more" target="_blank" href="https://whitewp.com/white-label-gravity-forms/">Learn More</a>
+            </div>
+            
+            <div>
                 <a target="_blank" href="https://whitewp.com/documentation/article/wordpress-login-url/">
                     <img src="https://whitewp.com/wp-content/uploads/2024/10/featured-wordpress-login-url-300x158.png">
                 </a>

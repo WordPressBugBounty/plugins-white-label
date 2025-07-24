@@ -113,6 +113,7 @@ function white_label_settings_elementor($fields)
                     'structure' => __('Structure', 'white-label'),
                     'notes' => __('Notes', 'white-label'),
                     'page-settings' => __('Page Settings', 'white-label'),
+                    'checklist' => __('Checklist', 'white-label'),
                     'whats-new' => __('What\'s New', 'white-label'),
                     'finder' => __('Finder', 'white-label'),
                     'help' => __('Help', 'white-label'),
@@ -330,28 +331,35 @@ function white_label_elementor_editor_css()
         }
         <?php endif; ?>
 
-        <?php if (is_array($elementor_editor_navigation) && isset($elementor_editor_navigation['whats-new'])) : ?>
+        <?php if (is_array($elementor_editor_navigation) && isset($elementor_editor_navigation['checklist'])) : ?>
         .elementor-panel-menu-items .elementor-panel-menu-item-notification-center,
         .MuiToolbar-root .MuiBox-root .MuiGrid-root:nth-of-type(3) .MuiStack-root .MuiBox-root:nth-of-type(1) {
             display: none;
         }
         <?php endif; ?>
 
-        <?php if (is_array($elementor_editor_navigation) && isset($elementor_editor_navigation['finder'])) : ?>
-        .elementor-panel-menu-items .elementor-panel-menu-item-finder,
-        .MuiToolbar-root .MuiBox-root .MuiGrid-root:nth-of-type(3) .MuiStack-root:nth-of-type(1) .MuiBox-root:nth-of-type(2) {
+        <?php if (is_array($elementor_editor_navigation) && isset($elementor_editor_navigation['whats-new'])) : ?>
+        .elementor-panel-menu-items .elementor-panel-menu-item-notification-center,
+        .MuiToolbar-root .MuiBox-root .MuiGrid-root:nth-of-type(3) .MuiStack-root .MuiBox-root:nth-of-type(2) {
             display: none;
         }
         <?php endif; ?>
 
-        <?php if (is_array($elementor_editor_navigation) && isset($elementor_editor_navigation['help'])) : ?>
+        <?php if (is_array($elementor_editor_navigation) && isset($elementor_editor_navigation['finder'])) : ?>
+        .elementor-panel-menu-items .elementor-panel-menu-item-finder,
         .MuiToolbar-root .MuiBox-root .MuiGrid-root:nth-of-type(3) .MuiStack-root:nth-of-type(1) .MuiBox-root:nth-of-type(3) {
             display: none;
         }
         <?php endif; ?>
 
-        <?php if (is_array($elementor_editor_navigation) && isset($elementor_editor_navigation['preview-changes'])) : ?>
+        <?php if (is_array($elementor_editor_navigation) && isset($elementor_editor_navigation['help'])) : ?>
         .MuiToolbar-root .MuiBox-root .MuiGrid-root:nth-of-type(3) .MuiStack-root:nth-of-type(1) .MuiBox-root:nth-of-type(4) {
+            display: none;
+        }
+        <?php endif; ?>
+
+        <?php if (is_array($elementor_editor_navigation) && isset($elementor_editor_navigation['preview-changes'])) : ?>
+        .MuiToolbar-root .MuiBox-root .MuiGrid-root:nth-of-type(3) .MuiStack-root:nth-of-type(1) .MuiBox-root:nth-of-type(5) {
             display: none;
         }
         <?php endif; ?>
