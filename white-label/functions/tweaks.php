@@ -122,7 +122,7 @@ function white_label_admin_bar_logo($wp_admin_bar)
     }
 
     // Modify WordPress Logo Link
-    if ($admin_remove_wp_logo_link === 'on' || $admin_replace_wp_logo_link) {
+    if ($admin_remove_wp_logo !== 'on' && ($admin_remove_wp_logo_link === 'on' || $admin_replace_wp_logo_link)) {
         $wp_logo = $wp_admin_bar->get_node('wp-logo');
         $href = ($admin_remove_wp_logo_link === 'on') ? '' : ($admin_replace_wp_logo_link ? esc_url($admin_replace_wp_logo_link) : $wp_logo->href);
         $wp_admin_bar->add_node([

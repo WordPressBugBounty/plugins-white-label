@@ -17,7 +17,7 @@ if (!defined('ABSPATH')) {
 function white_label_free_upgrade()
 {
     echo '
-    <div class="white-label-subsection white-label-upgrade-tab">
+    <div class="white-label-subsection white-label-custom-tab">
         <h1><a href="https://whitewp.com/pro?utm_source=plugin_white_label&utm_content=upgrade_tab" target="_blank">Upgrade to White Label Pro</a></h1>
 
         <p>
@@ -211,3 +211,99 @@ function white_label_free_upgrade()
 }
 
 add_action('white_label_form_bottom_white_label_upgrade', 'white_label_free_upgrade');
+
+/**
+ * Gravity Forms Custom Tab.
+ *
+ * @return void
+ */
+function white_label_plugins_gravity_forms()
+{
+    echo '
+        <div class="white-label-subsection white-label-custom-tab">
+            <div class="white-label-custom-tab-left">
+                <p>
+                <a target="_blank" href="https://whitewp.com/pro/">White Label Pro</a> offers features designed to help you white label the popular 
+                Gravity Forms plugin. You can use White Label Pro to customize the interface and feature set of Gravity Forms in a variety of ways.
+                </p>
+
+                <h4>Gravity Forms Features</h4>
+                
+                <ul>
+                    <li>
+                        <a target="_blank" href="https://whitewp.com/documentation/article/gravity-forms-branding/">Gravity Forms Branding</a>
+                        <ul>
+                            <li>Hide Logo</li>
+                            <li>Replace Name</li>
+                        </ul>
+                    </li>
+                    <li><a target="_blank" href="https://whitewp.com/documentation/article/gravity-forms-templates/">Gravity Forms Templates</a></li>
+                    <li><a target="_blank" href="https://whitewp.com/documentation/article/gravity-forms-toolbar-links/">Gravity Forms Toolbar Links</a></li>
+                    <li><a target="_blank" href="https://whitewp.com/documentation/article/gravity-forms-settings/">Gravity Forms Settings</a></li>
+                    <li><a target="_blank" href="https://whitewp.com/documentation/article/gravity-forms-add-ons/">Gravity Forms Add-Ons</a></li>
+                </ul>
+            </div>
+
+            <div class="white-label-custom-tab-right">
+                <a target="_blank" href="https://whitewp.com/white-label-gravity-forms/">
+                    <img src="https://whitewp.com/wp-content/uploads/2025/01/feature-white-label-gravity-forms-300x158.png">
+                </a>
+                <h3>White Label Gravity Forms</h3>
+                <p>We have written a complete guide on how to white label Gravity Forms using all of the features of our plugin.</p>
+                <a class="white-label-learn-more" target="_blank" href="https://whitewp.com/white-label-gravity-forms/">Learn More</a>
+            </div>
+        </div>
+    ';
+
+    echo '</div>'; // This closing div needs to be here.
+}
+
+add_action('white_label_settings_tab_white_label_plugins_gravity_forms', 'white_label_plugins_gravity_forms');
+
+/**
+ * Yoast SEO Custom Tab.
+ *
+ * @return void
+ */
+function white_label_plugins_yoast_seo()
+{
+    echo '
+        <div class="white-label-subsection white-label-custom-tab">
+            <div class="white-label-custom-tab-left">
+                <p>
+                <a target="_blank" href="https://whitewp.com/pro/">White Label Pro</a> offers features designed to help you white label the popular 
+                Yoast SEO plugin. You can use White Label Pro to customize the interface and feature set of Yoast SEO in a variety of ways.
+                </p>
+
+                <h4>Yoast SEO Features</h4>
+                
+                <ul>
+                    <li>
+                        <a target="_blank" href="https://whitewp.com/documentation/article/yoast-seo-branding/">Yoast SEO Branding</a>
+                        <ul>
+                            <li>Replace Name</li>
+                            <li>Hide Logo</li>
+                            <li>Hide Notification</li>
+                            <li>Hide Links</li>
+                        </ul>
+                    </li>
+                    <li><a target="_blank" href="https://whitewp.com/documentation/article/hide-yoast-seo-helpscout-beacon/">Yoast SEO Help Scout Beacon</a></li>
+                    <li><a target="_blank" href="https://whitewp.com/documentation/article/hide-yoast-seo-premium-upsells/">Yoast SEO Premium Upsells</a></li>
+                </ul>
+            </div>
+
+            <div class="white-label-custom-tab-right">
+                <a target="_blank" href="https://whitewp.com/white-label-yoast-seo/">
+                    <img src="https://whitewp.com/wp-content/uploads/2025/07/feature-white-label-yoast-seo-300x157.png">
+                </a>
+                <h3>White Label Yoast SEO</h3>
+                <p>We have written a complete guide on how to white label Yoast SEO using all of the features of our plugin.</p>
+                <a class="white-label-learn-more" target="_blank" href="https://whitewp.com/white-label-yoast-seo/">Learn More</a>
+            </div>
+        </div>
+    ';
+
+    echo '</div>'; // This closing div needs to be here.
+}
+
+add_action('white_label_settings_tab_white_label_plugins_yoast_seo', 'white_label_plugins_yoast_seo');

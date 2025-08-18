@@ -158,7 +158,29 @@ class white_label_Admin_Settings
             ];
         }
 
+        if (is_plugin_active('gravityforms/gravityforms.php')) {
+            $sections['white_label_plugins_gravity_forms'] = [
+                'id' => 'white_label_plugins_gravity_forms',
+                'title' => __('Gravity Forms', 'white-label').' <span class="white-label-pro-badge">'.__('Pro', 'white-label').'</span>',
+                'icon' => 'dashicons-arrow-right-alt2',
+                'help_url' => 'https://whitewp.com/white-label-gravity-forms/',
+                'requires_verification' => false,
+                'custom_tab' => true,
+            ];
 
+        }
+
+        if (is_plugin_active('wordpress-seo/wp-seo.php')) {
+            $sections['white_label_plugins_yoast_seo'] = [
+                'id' => 'white_label_plugins_yoast_seo',
+                'title' => __('Yoast SEO', 'white-label').' <span class="white-label-pro-badge">'.__('Pro', 'white-label').'</span>',
+                'icon' => 'dashicons-arrow-right-alt2',
+                'help_url' => 'https://whitewp.com/white-label-yoast-seo/',
+                'requires_verification' => false,
+                'custom_tab' => true,
+            ];
+
+        }
         
         $sections['white_label_themes'] = [
             'id' => 'white_label_themes',
@@ -236,10 +258,16 @@ class white_label_Admin_Settings
                 'name' => 'wl_admin_sub_section',
                 'label' => __('White Label Administrators', 'white-label').'<a target="_blank" tabindex="-1" class="white-label-help" href="https://whitewp.com/documentation/article/white-label-administrators/"><span class="dashicons dashicons-editor-help"></span></a>',
                 'desc' => __('A White Label Administrator will bypass other rules set inside the White Label plugin. You will be able to hide sensitive menus, plugins, 
-                updates, and more from all normal administrators. <a target="_blank" tabindex="-1" href="https://whitewp.com/documentation/article/white-label-administrators?utm_source=plugin_white_label&utm_content=general">Learn more about White Label Administrators</a>. 
-                <br><br>There is a White Label Preview Mode available to view any WordPress admin screen from the perspective of a user who is not a White Label Administrator. <a target="_blank" tabindex="-1" href="https://whitewp.com/documentation/article/white-label-preview-mode?utm_source=plugin_white_label&utm_content=general">Learn more about White Label Preview Mode</a>.', 'white-label'),
+                updates, and more from all normal administrators. <a target="_blank" tabindex="-1" href="https://whitewp.com/documentation/article/white-label-administrators?utm_source=plugin_white_label&utm_content=general">Learn more about White Label Administrators</a>.', 'white-label'),
                 'type' => 'subheading',
                 'class' => 'subheading',
+            ],
+            [
+                'name' => 'enable_white_label_preview_mode',
+                'label' => __('White Label Preview Mode', 'white-label').'<a target="_blank" tabindex="-1" class="white-label-help" href="https://whitewp.com/documentation/article/white-label-preview-mode/"><span class="dashicons dashicons-editor-help"></span></a>',
+                'desc' => __('Add a menu link to preview the current screen as a user who is not a White Label Administrator.', 'white-label'),
+                'help' => '',
+                'type' => 'checkbox',
             ],
             [
                 'name' => 'wl_administrators',
@@ -868,7 +896,7 @@ class white_label_Admin_Settings
     {
         echo '<div id="white-label-header">';
         echo '<div id="white-label-header-version">';
-        echo '<b>White Label</b> &middot; v2.16.0';
+        echo '<b>White Label</b> &middot; v2.16.1';
         echo '</div>'; // #white-label-header-version
     
         echo '<div id="white-label-header-links">';
@@ -931,13 +959,13 @@ class white_label_Admin_Settings
     public function scripts($hook)
     {
         if (isset($_GET['white-label-preview-mode']) && sanitize_text_field($_GET['white-label-preview-mode']) === 'Y') {
-            wp_enqueue_style('white-label-preview-mode', plugins_url('assets/css/white-label-preview-mode.css', dirname(__FILE__)), null, '2.16.0');
+            wp_enqueue_style('white-label-preview-mode', plugins_url('assets/css/white-label-preview-mode.css', dirname(__FILE__)), null, '2.16.1');
         }
 
         $wl_panel = white_label_get_option('admin_welcome_panel_content', 'white_label_dashboard', false);
 
         if (! empty($wl_panel)) {
-            wp_enqueue_style('white-label-dashboard', plugins_url('assets/css/white-label-dashboard.css', dirname(__FILE__)), null, '2.16.0');
+            wp_enqueue_style('white-label-dashboard', plugins_url('assets/css/white-label-dashboard.css', dirname(__FILE__)), null, '2.16.1');
         }
 
         if ($hook != 'settings_page_white-label') {
@@ -951,7 +979,7 @@ class white_label_Admin_Settings
         wp_enqueue_script('wp-color-picker');
 
         // White Label
-        wp_enqueue_style('white-label', plugins_url('assets/css/white-label.css', dirname(__FILE__)), null, '2.16.0');
-        wp_enqueue_script('white-label', plugins_url('assets/js/white-label.min.js', dirname(__FILE__)), ['jquery'], '2.16.0');
+        wp_enqueue_style('white-label', plugins_url('assets/css/white-label.css', dirname(__FILE__)), null, '2.16.1');
+        wp_enqueue_script('white-label', plugins_url('assets/js/white-label.min.js', dirname(__FILE__)), ['jquery'], '2.16.1');
     }
 }

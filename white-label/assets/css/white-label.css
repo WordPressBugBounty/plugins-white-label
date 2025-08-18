@@ -161,6 +161,15 @@ body.rtl .white-label-admin {
     float: right;
 }
 
+.white-label-admin span.white-label-pro-badge {
+    padding: 2px 6px;
+    border-radius: 4px;
+    color: #ffffff;
+    background-color: #0053CC;
+    text-transform: uppercase;
+    font-size: 0.8em;
+}
+
 .white-label-admin a.white-label-help:hover {
     color: inherit;
 }
@@ -305,13 +314,29 @@ h4.white-label-name {
     margin-bottom: 12px;
 }
 
-.white-label-upgrade-tab {
-    width: 90%;
-    margin: 0 5%;
+.white-label-custom-tab {
+    width: 100%;
     text-align: center;
 }
 
-.white-label-upgrade-tab h1 {
+.white-label-custom-tab-left {
+    margin-top: 20px;
+    width: calc(70% - 36px);
+    float: left;
+    text-align: left;
+}
+
+.white-label-custom-tab-right {
+    margin-top: 20px;
+    width: 30%;
+    float: right;
+    padding: 16px;
+    border: 1px solid #c3c4c7;
+    background: #fdfdfd;
+    text-align: left;
+}
+
+.white-label-custom-tab h1 {
     margin-top: 0.5em;
     margin-bottom: 0.5em;
     font-size: 2.25em;
@@ -319,47 +344,69 @@ h4.white-label-name {
     text-align: center;
 }
 
-.white-label-upgrade-tab h3 {
+.white-label-custom-tab h3 {
     margin: 0.5em 0 0 0;
     font-size: 1.60em;
     font-weight: 600;
     line-height: 140%;
 }
 
-.white-label-upgrade-tab p {
+.white-label-custom-tab h4 {
+    margin: 20px 0 0 0;
+    font-size: 1.50em;
+    font-weight: 600;
+    line-height: 140%;
+}
+
+.white-label-custom-tab p {
     margin: 0.5em 0 0 0;
     font-size: 1.35em;
     line-height: 140%;
 }
 
-.white-label-upgrade-tab a {
+.white-label-custom-tab li {
+    margin: 0.5em 0 0 0;
+    font-size: 1.20em;
+    line-height: 140%;
+}
+
+.white-label-custom-tab ul ul {
+    margin: 0.5em 0 0 1em;
+}
+
+.white-label-custom-tab ul ul li {
+    font-size: 1.0em;
+    line-height: 140%;
+}
+
+.white-label-custom-tab a {
     font-weight: 700;
     color: #0052cc;
 }
 
-.white-label-upgrade-tab h1 a {
+.white-label-custom-tab h1 a {
     text-decoration: none;
 }
 
-.white-label-upgrade-tab img {
+.white-label-custom-tab img, .white-label-custom-tab .white-label-custom-tab-right img {
     width: 100%;
     height: auto;
 }
 
-.white-label-upgrade-tab .button-primary {
+.white-label-custom-tab .button-primary {
     width: 60%; margin: 1em 20%; padding: 5px 10px; background: #0052cc; font-size: 1.15em; font-weight: 700; border-color: #0052cc; color: #fff; text-align:center;
 }
 
-.white-label-upgrade-tab .white-label-grid {
-    margin-top: 2em;
-    width: 100%;
+.white-label-custom-tab .white-label-grid {
+    margin: 2em 5% 0 5%;
+    width: 90%;
     display: grid;
     justify-items: center;
     grid-template-columns: repeat(3, 1fr);
     gap: 16px;
 }
 
-.white-label-upgrade-tab .white-label-grid div {
+.white-label-custom-tab .white-label-grid div {
     padding: 16px;
     border: 1px solid #c3c4c7;
     background: #fdfdfd;
@@ -369,7 +416,7 @@ h4.white-label-name {
     height: 370px;
 }
 
-.white-label-upgrade-tab .white-label-grid div a.white-label-learn-more {
+.white-label-custom-tab .white-label-grid div a.white-label-learn-more, .white-label-custom-tab .white-label-custom-tab-right a.white-label-learn-more {
     display: block;
     margin-top: auto;
     padding: 8px;
@@ -378,6 +425,10 @@ h4.white-label-name {
     text-align: center;
     text-decoration: none;
     border-radius: 4px;
+}
+
+.white-label-custom-tab .white-label-custom-tab-right a.white-label-learn-more {
+    margin-top: 20px;
 }
 
 a.button.white-label-check-license {
@@ -484,12 +535,12 @@ body.rtl .white-label-sidebar {
 		margin-left: 0px;
 	}
 
-    .white-label-upgrade-tab {
+    .white-label-custom-tab {
         margin: 0;
         width: 100%;
     }
 
-    .white-label-upgrade-tab .white-label-grid {
+    .white-label-custom-tab .white-label-grid {
         display: grid;
         justify-items: center;
         grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));

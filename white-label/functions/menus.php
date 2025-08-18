@@ -173,7 +173,7 @@ function white_label_sidebar_menu_logo_css()
 add_action('admin_head', 'white_label_sidebar_menu_logo_css');
 
 /**
- * Add White Label Preview Mode to the admin bar.
+ * Add White Label Preview to the admin bar.
  *
  * @return void
  */
@@ -185,11 +185,11 @@ function white_label_preview_mode()
     if (isset($_GET['white-label-preview-mode']) && sanitize_text_field($_GET['white-label-preview-mode']) === 'Y') {
         $wp_admin_bar->add_menu([
             'id' => 'white-label-preview-mode',
-            'title' => __('Viewing White Label Preview Mode', 'white-label'),
+            'title' => __('WL Preview', 'white-label'),
             'href' => remove_query_arg('white-label-preview-mode'),
             'meta' => [
                 'class' => 'white-label-preview-mode',
-                'title' => __('Viewing White Label Preview Mode', 'white-label'),
+                'title' => __('White Label Preview Mode', 'white-label'),
             ],
         ]);
 
@@ -205,16 +205,20 @@ function white_label_preview_mode()
         return false;
     }
 
-    $wp_admin_bar->add_menu([
-        'id' => 'white-label-preview-mode',
-        'title' => __('White Label Preview Mode', 'white-label'),
-        'href' => add_query_arg('white-label-preview-mode', 'Y'),
-        'meta' => [
-            'class' => 'white-label-preview-mode',
-            'target' => '_blank',
-            'title' => __('White Label Preview Mode', 'white-label'),
-        ],
-    ]);
+    $enable_white_label_preview_mode = white_label_get_option('enable_white_label_preview_mode', 'white_label_general', false);
+
+    if ($enable_white_label_preview_mode === 'on') {
+        $wp_admin_bar->add_menu([
+            'id' => 'white-label-preview-mode',
+            'title' => __('WL Preview', 'white-label'),
+            'href' => add_query_arg('white-label-preview-mode', 'Y'),
+            'meta' => [
+                'class' => 'white-label-preview-mode',
+                'target' => '_blank',
+                'title' => __('White Label Preview Mode', 'white-label'),
+            ],
+        ]);
+    }
 }
 
 add_action('admin_bar_menu', 'white_label_preview_mode', 9999999999);

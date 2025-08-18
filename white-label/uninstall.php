@@ -20,6 +20,8 @@ if (isset($white_label_general['delete_settings']) && $white_label_general['dele
         'white_label_misc',
         'white_label_plugins',
         'white_label_plugins_elementor',
+        'white_label_plugins_gravity_forms',
+        'white_label_plugins_yoast_seo',
         'white_label_pro_license',
         'white_label_pro_license_status',
         'white_label_themes',

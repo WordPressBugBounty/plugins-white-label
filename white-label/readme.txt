@@ -6,7 +6,7 @@ Author: WhiteWP.com
 Requires at least: 5.0
 Tested up to: 6.8
 Requires PHP: 7.4
-Stable tag: 2.16.0
+Stable tag: 2.16.1
 License: GPLv2 or later
 License URI: https://www.gnu.org/licenses/gpl-2.0.html
 
@@ -161,6 +161,11 @@ Yes, White Label Multisite is supported. [Please visit our website to learn more
 11. White Label Front End Settings
 
 == Changelog ==
+
+= 2.16.1 =
+* Bug fixes for "Replace Logo Link" and "Remove Logo Link" options.
+* New opt-in toggle for the "White Label Preview Mode" feature under "General" settings.
+* Interface changes.
 
 = 2.16.0 =
 * New "White Label Preview Mode" option to view any WordPress admin screen from the perspective of a user who is not a White Label Administrator.
