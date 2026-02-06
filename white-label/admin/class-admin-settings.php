@@ -896,7 +896,7 @@ class white_label_Admin_Settings
     {
         echo '<div id="white-label-header">';
         echo '<div id="white-label-header-version">';
-        echo '<b>White Label</b> &middot; v2.16.1';
+        echo '<b>White Label</b> &middot; v2.16.5';
         echo '</div>'; // #white-label-header-version
     
         echo '<div id="white-label-header-links">';
@@ -959,13 +959,13 @@ class white_label_Admin_Settings
     public function scripts($hook)
     {
         if (isset($_GET['white-label-preview-mode']) && sanitize_text_field($_GET['white-label-preview-mode']) === 'Y') {
-            wp_enqueue_style('white-label-preview-mode', plugins_url('assets/css/white-label-preview-mode.css', dirname(__FILE__)), null, '2.16.1');
+            wp_enqueue_style('white-label-preview-mode', plugins_url('assets/css/white-label-preview-mode.css', dirname(__FILE__)), null, '2.16.5');
         }
 
         $wl_panel = white_label_get_option('admin_welcome_panel_content', 'white_label_dashboard', false);
 
         if (! empty($wl_panel)) {
-            wp_enqueue_style('white-label-dashboard', plugins_url('assets/css/white-label-dashboard.css', dirname(__FILE__)), null, '2.16.1');
+            wp_enqueue_style('white-label-dashboard', plugins_url('assets/css/white-label-dashboard.css', dirname(__FILE__)), null, '2.16.5');
         }
 
         if ($hook != 'settings_page_white-label') {
@@ -979,7 +979,7 @@ class white_label_Admin_Settings
         wp_enqueue_script('wp-color-picker');
 
         // White Label
-        wp_enqueue_style('white-label', plugins_url('assets/css/white-label.css', dirname(__FILE__)), null, '2.16.1');
-        wp_enqueue_script('white-label', plugins_url('assets/js/white-label.min.js', dirname(__FILE__)), ['jquery'], '2.16.1');
+        wp_enqueue_style('white-label', plugins_url('assets/css/white-label.css', dirname(__FILE__)), null, '2.16.5');
+        wp_enqueue_script('white-label', plugins_url('assets/js/white-label.min.js', dirname(__FILE__)), ['jquery'], '2.16.5');
     }
 }

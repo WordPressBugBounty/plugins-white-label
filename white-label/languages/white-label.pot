@@ -1,4 +1,4 @@
-# Copyright (C) 2025 white-label
+# Copyright (C) 2026 white-label
 # This file is distributed under the same license as the white-label package.
 msgid ""
 msgstr ""
@@ -31,7 +31,7 @@ msgstr ""
 msgid "Success! White Label settings has been imported. Please set your White Label Administrators as they differ from site to site."
 msgstr ""
 
-#: dist/white-label/admin/class-admin-settings.php:80, dist/white-label/admin/class-admin-settings.php:916
+#: dist/white-label/admin/class-admin-settings.php:80, dist/white-label/admin/class-admin-settings.php:906
 msgid "Get White Label Pro"
 msgstr ""
 
@@ -67,7 +67,7 @@ msgstr ""
 msgid "Use the settings below to make changes to the Elementor interface. Read our <a target=\"_blank\" href=\"https://whitewp.com/white-label-elementor/\">How to White Label Elementor</a> guide for additional information and setting suggestions for the rest of the WordPress admin interface and menus. Interested in additional Elementor features? Please fill out our <a target=\"_blank\" href=\"http://whitewp.com/feedback\">feedback form</a>."
 msgstr ""
 
-#: dist/white-label/admin/class-admin-settings.php:164, dist/white-label/admin/class-admin-settings.php:768
+#: dist/white-label/admin/class-admin-settings.php:164
 msgid "Gravity Forms"
 msgstr ""
 
@@ -91,7 +91,7 @@ msgstr ""
 msgid "Upgrade"
 msgstr ""
 
-#: dist/white-label/admin/class-admin-settings.php:232, dist/white-label/admin/class-admin-settings.php:949
+#: dist/white-label/admin/class-admin-settings.php:232, dist/white-label/admin/class-admin-settings.php:939
 msgid "White Label"
 msgstr ""
 
@@ -461,7 +461,7 @@ msgstr ""
 msgid "Footer Text"
 msgstr ""
 
-#: dist/white-label/admin/class-admin-settings.php:595, dist/white-label/admin/class-admin-settings.php:823
+#: dist/white-label/admin/class-admin-settings.php:595, dist/white-label/admin/class-admin-settings.php:813
 msgid "Scripts"
 msgstr ""
 
@@ -548,7 +548,7 @@ msgstr ""
 msgid "Hide, rename, or change icons of sidebar menu items."
 msgstr ""
 
-#: dist/white-label/admin/class-admin-settings.php:691, dist/white-label/admin/class-admin-settings.php:692, dist/white-label/admin/class-admin-settings.php:745, dist/white-label/admin/class-admin-settings.php:746, dist/white-label/admin/class-admin-settings.php:775, dist/white-label/admin/class-admin-settings.php:776, dist/white-label/functions/plugins-elementor.php:28, dist/white-label/functions/plugins-elementor.php:51, dist/white-label/functions/plugins-elementor.php:72, dist/white-label/functions/plugins-elementor.php:97, dist/white-label/functions/plugins-elementor.php:131
+#: dist/white-label/admin/class-admin-settings.php:691, dist/white-label/admin/class-admin-settings.php:692, dist/white-label/admin/class-admin-settings.php:745, dist/white-label/admin/class-admin-settings.php:746, dist/white-label/admin/class-admin-settings.php:765, dist/white-label/admin/class-admin-settings.php:766, dist/white-label/functions/plugins-elementor.php:28, dist/white-label/functions/plugins-elementor.php:51, dist/white-label/functions/plugins-elementor.php:72, dist/white-label/functions/plugins-elementor.php:97, dist/white-label/functions/plugins-elementor.php:131
 msgid "These settings are ignored by White Label Administrators."
 msgstr ""
 
@@ -616,115 +616,111 @@ msgstr ""
 msgid "Hidden Plugins"
 msgstr ""
 
-#: dist/white-label/admin/class-admin-settings.php:769
-msgid "Hide the Gravity Forms menu item from the sidebar."
-msgstr ""
-
-#: dist/white-label/admin/class-admin-settings.php:775
+#: dist/white-label/admin/class-admin-settings.php:765
 msgid "Hide themes, or change their details, when viewing the Themes screen. "
 msgstr ""
 
-#: dist/white-label/admin/class-admin-settings.php:776
+#: dist/white-label/admin/class-admin-settings.php:766
 msgid "Hide themes when viewing the Themes screen."
 msgstr ""
 
-#: dist/white-label/admin/class-admin-settings.php:776
+#: dist/white-label/admin/class-admin-settings.php:766
 msgid "Change theme details by upgrading to <a href=\"https://whitewp.com/pro?utm_source=plugin_white_label&utm_content=themes\" target=\"_blank\">White Label Pro</a>."
 msgstr ""
 
-#: dist/white-label/admin/class-admin-settings.php:781
+#: dist/white-label/admin/class-admin-settings.php:771
 msgid "Installed Themes"
 msgstr ""
 
-#: dist/white-label/admin/class-admin-settings.php:788
+#: dist/white-label/admin/class-admin-settings.php:778
 msgid "Hidden Themes"
 msgstr ""
 
-#: dist/white-label/admin/class-admin-settings.php:798
+#: dist/white-label/admin/class-admin-settings.php:788
 msgid "WordPress Version Number"
 msgstr ""
 
-#: dist/white-label/admin/class-admin-settings.php:799
+#: dist/white-label/admin/class-admin-settings.php:789
 msgid "Remove the WordPress version number from front end markup."
 msgstr ""
 
-#: dist/white-label/admin/class-admin-settings.php:805
+#: dist/white-label/admin/class-admin-settings.php:795
 msgid "Meta Generator"
 msgstr ""
 
-#: dist/white-label/admin/class-admin-settings.php:806
+#: dist/white-label/admin/class-admin-settings.php:796
 msgid "Remove the <meta> tag with the current version number."
 msgstr ""
 
-#: dist/white-label/admin/class-admin-settings.php:811
+#: dist/white-label/admin/class-admin-settings.php:801
 msgid "RSS Feed"
 msgstr ""
 
-#: dist/white-label/admin/class-admin-settings.php:812
+#: dist/white-label/admin/class-admin-settings.php:802
 msgid "Remove the current WordPress version number from the site's RSS feed."
 msgstr ""
 
-#: dist/white-label/admin/class-admin-settings.php:817
+#: dist/white-label/admin/class-admin-settings.php:807
 msgid "Stylesheets"
 msgstr ""
 
-#: dist/white-label/admin/class-admin-settings.php:818
+#: dist/white-label/admin/class-admin-settings.php:808
 msgid "Remove the current WordPress version number from the end of stylesheets. May impact caching."
 msgstr ""
 
-#: dist/white-label/admin/class-admin-settings.php:824
+#: dist/white-label/admin/class-admin-settings.php:814
 msgid "Remove the current WordPress version number from the end of scripts. May impact caching."
 msgstr ""
 
-#: dist/white-label/admin/class-admin-settings.php:833
+#: dist/white-label/admin/class-admin-settings.php:823
 msgid "Multisite"
 msgstr ""
 
-#: dist/white-label/admin/class-admin-settings.php:834
+#: dist/white-label/admin/class-admin-settings.php:824
 msgid "Adjust general settings for WordPress Multisite installations. <a target=\"_blank\" tabindex=\"-1\" href=\"https://whitewp.com/documentation/article/is-white-label-multisite-compatible/?utm_source=plugin_white_label&utm_content=multisite\">Learn more about White Label and WordPress Multisite</a>."
 msgstr ""
 
-#: dist/white-label/admin/class-admin-settings.php:851
+#: dist/white-label/admin/class-admin-settings.php:841
 msgid "Ignore Global Settings"
 msgstr ""
 
-#: dist/white-label/admin/class-admin-settings.php:852
+#: dist/white-label/admin/class-admin-settings.php:842
 msgid "Apply this site's White Label settings even if the main site has Global Settings activated."
 msgstr ""
 
-#: dist/white-label/admin/class-admin-settings.php:843
+#: dist/white-label/admin/class-admin-settings.php:833
 msgid "Global Settings"
 msgstr ""
 
-#: dist/white-label/admin/class-admin-settings.php:844
+#: dist/white-label/admin/class-admin-settings.php:834
 msgid "Apply this main site's White Label settings to all sites on the network."
 msgstr ""
 
-#: dist/white-label/admin/class-admin-settings.php:886
+#: dist/white-label/admin/class-admin-settings.php:876
 msgid "Your settings won't take effect until White Label is enabled in the <b>General</b> tab."
 msgstr ""
 
-#: dist/white-label/admin/class-admin-settings.php:895
+#: dist/white-label/admin/class-admin-settings.php:885
 msgid "Select at least one White Label Administrator in the <b>General</b> tab. Several features of White Label require assigned White Label Administrators."
 msgstr ""
 
-#: dist/white-label/admin/class-admin-settings.php:913
+#: dist/white-label/admin/class-admin-settings.php:903
 msgid "Documentation"
 msgstr ""
 
-#: dist/white-label/admin/class-admin-settings.php:914
+#: dist/white-label/admin/class-admin-settings.php:904
 msgid "Support"
 msgstr ""
 
-#: dist/white-label/admin/class-admin-settings.php:915
+#: dist/white-label/admin/class-admin-settings.php:905
 msgid "Feedback"
 msgstr ""
 
-#: dist/white-label/admin/class-admin-settings.php:931
+#: dist/white-label/admin/class-admin-settings.php:921
 msgid "A WordPress Plugin by"
 msgstr ""
 
-#: dist/white-label/admin/class-admin-settings.php:933
+#: dist/white-label/admin/class-admin-settings.php:923
 msgid "Learn more at"
 msgstr ""
 
@@ -901,11 +897,11 @@ msgid "Hide menu items in the Elementor editor and Elementor settings navigation
 msgstr ""
 
 #: dist/white-label/functions/plugins-elementor.php:107
-msgid "Theme Builder"
+msgid "Site Settings"
 msgstr ""
 
 #: dist/white-label/functions/plugins-elementor.php:108
-msgid "History"
+msgid "Theme Builder"
 msgstr ""
 
 #: dist/white-label/functions/plugins-elementor.php:109
@@ -917,59 +913,55 @@ msgid "Keyboard Shortcuts"
 msgstr ""
 
 #: dist/white-label/functions/plugins-elementor.php:111
-msgid "Exit to WordPress"
+msgid "Help Center"
 msgstr ""
 
 #: dist/white-label/functions/plugins-elementor.php:112
-msgid "Site Settings"
+msgid "Connect My Account/My Elementor"
 msgstr ""
 
 #: dist/white-label/functions/plugins-elementor.php:113
-msgid "Structure"
+msgid "Exit to WordPress"
 msgstr ""
 
 #: dist/white-label/functions/plugins-elementor.php:114
-msgid "Notes"
-msgstr ""
-
-#: dist/white-label/functions/plugins-elementor.php:115
 msgid "Page Settings"
 msgstr ""
 
+#: dist/white-label/functions/plugins-elementor.php:115
+msgid "Notes"
+msgstr ""
+
 #: dist/white-label/functions/plugins-elementor.php:116
-msgid "Checklist"
+msgid "History"
 msgstr ""
 
 #: dist/white-label/functions/plugins-elementor.php:117
-msgid "What's New"
+msgid "Recently Edited"
 msgstr ""
 
 #: dist/white-label/functions/plugins-elementor.php:118
-msgid "Finder"
+msgid "What's New"
 msgstr ""
 
 #: dist/white-label/functions/plugins-elementor.php:119
-msgid "Help"
+msgid "Finder"
 msgstr ""
 
 #: dist/white-label/functions/plugins-elementor.php:120
-msgid "Preview Changes"
+msgid "Structure"
 msgstr ""
 
 #: dist/white-label/functions/plugins-elementor.php:121
-msgid "Add-ons"
+msgid "Preview Changes"
 msgstr ""
 
 #: dist/white-label/functions/plugins-elementor.php:122
+msgid "Add-ons"
+msgstr ""
+
+#: dist/white-label/functions/plugins-elementor.php:123
 msgid "Connect Account"
-msgstr ""
-
-#: dist/white-label/functions/plugins-elementor.php:123
-msgid "View Page"
-msgstr ""
-
-#: dist/white-label/functions/plugins-elementor.php:123
-msgid "Out of Date"
 msgstr ""
 
 #: dist/white-label/functions/plugins-elementor.php:130
