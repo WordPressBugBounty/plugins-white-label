@@ -4,9 +4,9 @@ Tags: white label, login page, custom login, custom dashboard, custom admin
 Author URI: https://whitewp.com
 Author: WhiteWP.com
 Requires at least: 5.0
-Tested up to: 6.8
+Tested up to: 6.9
 Requires PHP: 7.4
-Stable tag: 2.16.5
+Stable tag: 2.16.6
 License: GPLv2 or later
 License URI: https://www.gnu.org/licenses/gpl-2.0.html
 
@@ -86,6 +86,7 @@ White Label is made for those who want to build a custom admin for WordPress. He
 
 * White Label Yoast SEO
 * White Label Gravity Forms
+* White Label SearchWP
 * Change WordPress login URL
 * Rename admin menu items
 * Change admin menu icons
@@ -161,6 +162,10 @@ Yes, White Label Multisite is supported. [Please visit our website to learn more
 11. White Label Front End Settings
 
 == Changelog ==
+
+= 2.16.6 =
+* Bug fix for Breakdance page builder.
+* Bug fix for Howdy Text replacement.
 
 = 2.16.5 =
 * Bug fixes for Elementor settings.
@@ -243,87 +248,3 @@ Yes, White Label Multisite is supported. [Please visit our website to learn more
 * Added links to support documentation for each setting when available.
 * Interface changes.
 * Minor bug fixes.
-
-= 2.9.1 =
-* Minor bug fixes.
-
-= 2.9.0 =
-* New "Remove Remember Me " option for Login Design.
-* New "Remove Language Switcher" option for Login Design.
-* New "Remove Go to Site" option for Login Design.
-* New "Remove Lost Your Password?" option for Login Design.
-* Interface changes.
-* Minor bug fixes.
-
-= 2.8.1 =
-* Minor bug fixes.
-
-= 2.8.0 =
-* New "Button Border Color" option for Login Design.
-* Minor bug fixes.
-
-= 2.7.2 =
-* Minor bug fixes.
-
-= 2.7.1 =
-* Minor bug fixes.
-
-= 2.7.0 =
-* New "Menus" setting to adjust the width of the sidebar menu.
-* Interface changes.
-* Minor bug fixes.
-
-= 2.6.0 =
-* New "Front End" section with settings to hide the WordPress Version Number.
-* New "Visual Tweaks" setting to remove the WordPress version from the admin footer.
-* Interface changes.
-* Minor bug fixes.
-
-= 2.5.2 =
-* Fix for handling certain WooCommerce sidebar menus.
-* Added sidebar information and link to a new feedback form.
-
-= 2.5.1 =
-* New "Submenu Text" and "Submenu Highlight" options for Admin Color Schemes.
-* Fix for properly displaying embeds in Custom Welcome Panels, Custom Dashboard Widgets, and Custom Dashboards.
-* Fix for handling upsell menus Yoast SEO injects for certain user roles.
-
-= 2.5.0 =
-* New "Multisite" settings to apply main site's White Label settings to all site's on a network.
-
-= 2.4.0 =
-* New "Login" settings to set Logo Width and Logo Height.
-* Changed plugin to require PHP 7.4 or higher.
-* Minor bug fixes.
-
-= 2.3.0 =
-* New "Visual Tweaks" settings to customize the Admin Color Scheme.
-* Remove Dashboard Widgets now allows you to remove all default widgets and/or all third-party widgets.
-* Reverted change in 2.2.1: Custom Dashboards once again show for White Label Administrators.
-* Interface changes.
-* Minor bug fixes.
-
-= 2.2.1 =
-* Fixed error where Custom Dashboards were showing for White Label Administrators.
-
-= 2.2.0 =
-* New interface for the "Menus & Plugins" section.
-
-= 2.1.5 =
-* File restructuring to make future development easier.
-
-= 2.1.4 =
-* Interface changes.
-* Minor bug fixes.
-
-= 2.1.3 =
-* Strips any HTML from menu names when displaying them on the settings page.
-
-= 2.1.2 =
-* Performance-focused update.
-* Improves loading speed by using object caching on common queries.
-* Better separation of code logic for frontend/admin view.
-* Improved transients code.
-
-= 2.1.1 =
-* Ready and tested with WordPress 5.6

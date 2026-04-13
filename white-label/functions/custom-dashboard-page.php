@@ -99,7 +99,8 @@ HTML;
     // Redirect users to our new dashboard from the old one.
     public function current_screen($screen)
     {
-        if ('dashboard' == $screen->id) {
+        // The Breakdance page builder has issues loading some modals when the dashboard is redirected, so we need to exclude it from the redirection.
+        if ('dashboard' == $screen->id && !isset($_GET['breakdance_wpuiforbuilder_tinymce'])) {
             wp_safe_redirect(admin_url('admin.php?page=my-dashboard'));
             exit;
         }

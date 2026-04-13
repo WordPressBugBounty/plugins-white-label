@@ -150,7 +150,7 @@ function white_label_change_howdy()
     if (!empty($white_label_admin_howdy)) {
         $wl_get_howdy = $wp_admin_bar->get_node('my-account');
 
-        $wl_replacement = preg_replace('/^[^,]*,\s*/', $white_label_admin_howdy.' ', $wl_get_howdy->title);
+        $wl_replacement = preg_replace('/^[^,]*,\s*/', $white_label_admin_howdy.' ', (isset($wl_get_howdy->title) ? $wl_get_howdy->title : ''));
         $wp_admin_bar->add_node(
             [
                 'id' => 'my-account',

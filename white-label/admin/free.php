@@ -43,6 +43,15 @@ function white_label_free_upgrade()
                 <p>White label Gravity Forms by customizing the plugin\'s branding, interface, and more.</p>
                 <a class="white-label-learn-more" target="_blank" href="https://whitewp.com/white-label-gravity-forms/">Learn More</a>
             </div>
+
+            <div>
+                <a target="_blank" href="https://whitewp.com/white-label-searchwp/">
+                    <img src="https://whitewp.com/wp-content/uploads/2026/01/feature-white-label-searchwp-300x158.png">
+                </a>
+                <h3>SearchWP</h3>
+                <p>White label SearchWP by changing branding, removing upsells, and customizing menus.</p>
+                <a class="white-label-learn-more" target="_blank" href="https://whitewp.com/white-label-searchwp/">Learn More</a>
+            </div>
             
             <div>
                 <a target="_blank" href="https://whitewp.com/documentation/article/wordpress-login-url/">
@@ -259,6 +268,55 @@ function white_label_plugins_gravity_forms()
 }
 
 add_action('white_label_settings_tab_white_label_plugins_gravity_forms', 'white_label_plugins_gravity_forms');
+
+/**
+ * SearchWP Custom Tab.
+ *
+ * @return void
+ */
+function white_label_plugins_searchwp()
+{
+    echo '
+        <div class="white-label-subsection white-label-custom-tab">
+            <div class="white-label-custom-tab-left">
+                <p>
+                <a target="_blank" href="https://whitewp.com/pro/">White Label Pro</a> offers features designed to help you white label the popular 
+                SearchWP plugin. You can use White Label Pro to customize the interface and feature set of SearchWP in a variety of ways.
+                </p>
+
+                <h4>SearchWP Features</h4>
+                
+                <ul>
+                    <li>
+                        <a target="_blank" href="https://whitewp.com/documentation/article/searchwp-branding/">SearchWP Branding</a>
+                        <ul>
+                            <li>Replace Name</li>
+                            <li>Hide Logo</li>
+                        </ul>
+                    </li>
+                    <li><a target="_blank" href="https://whitewp.com/documentation/article/hide-searchwp-menus/">SearchWP Header Menu</a></li>
+                    <li><a target="_blank" href="https://whitewp.com/documentation/article/hide-searchwp-menus/">SearchWP Algorithm Menu</a></li>
+                    <li><a target="_blank" href="https://whitewp.com/documentation/article/hide-searchwp-menus/">SearchWP Settings Menu</a></li>
+                    <li><a target="_blank" href="https://whitewp.com/documentation/article/hide-searchwp-menus/">SearchWP Tools Menu</a></li>
+                    <li><a target="_blank" href="https://whitewp.com/documentation/article/hide-searchwp-upsells/">SearchWP Upsells</a></li>
+                </ul>
+            </div>
+
+            <div class="white-label-custom-tab-right">
+                <a target="_blank" href="https://whitewp.com/white-label-searchwp/">
+                    <img src="https://whitewp.com/wp-content/uploads/2026/01/feature-white-label-searchwp-300x158.png">
+                </a>
+                <h3>White Label SearchWP</h3>
+                <p>We have written a complete guide on how to white label SearchWP using all of the features of our plugin.</p>
+                <a class="white-label-learn-more" target="_blank" href="https://whitewp.com/white-label-searchwp/">Learn More</a>
+            </div>
+        </div>
+    ';
+
+    echo '</div>'; // This closing div needs to be here.
+}
+
+add_action('white_label_settings_tab_white_label_plugins_searchwp', 'white_label_plugins_searchwp');
 
 /**
  * Yoast SEO Custom Tab.

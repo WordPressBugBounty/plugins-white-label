@@ -194,7 +194,7 @@ function white_label_get_sidebar_menus()
             }
 
             if (strlen($menu_name) == 0) {
-                $menu_name = ($default_menu_name !== null ? strip_tags('asdf'.$default_menu_name) : $default_menu_name);
+                $menu_name = ($default_menu_name !== null ? strip_tags($default_menu_name) : $default_menu_name);
             }
 
             $parent_slug = $menu_entry[2];
@@ -231,7 +231,7 @@ function white_label_get_submenus($parent_slug)
                 $menu_name = ($menu_name !== null ? trim(preg_replace("/(<.*>.*?<\/.*>)/is", '', $menu_name)) : '');
 
                 if (strlen($menu_name) == 0) {
-                    $menu_name = ($default_menu_name !== null ? strip_tags('asdf'.$default_menu_name) : $default_menu_name);
+                    $menu_name = ($default_menu_name !== null ? strip_tags($default_menu_name) : $default_menu_name);
                 }
 
                 // Add the submenu to the array.
