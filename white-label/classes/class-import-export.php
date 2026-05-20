@@ -283,7 +283,7 @@ class white_label_Import_Export_Options
                                 <p>
                                     <input type="hidden" name="white_label_action" value="import_settings" />
                                     <?php wp_nonce_field('white_label_import_nonce', 'white_label_import_nonce'); ?>
-                                    <?php submit_button(__('Import Settings'), 'secondary', 'submit', false, ['id' => 'submit-import']); ?>
+                                    <?php submit_button(__('Import Settings', 'white-label'), 'secondary', 'submit', false, ['id' => 'submit-import']); ?>
                                 </p>
                             </form>
                         </td>
@@ -311,7 +311,7 @@ class white_label_Import_Export_Options
 
                                 <p>
                                     <?php wp_nonce_field('white_label_export_nonce', 'white_label_export_nonce'); ?>
-                                    <?php submit_button(__('Export Settings'), 'secondary', 'submit', false, ['id' => 'submit-export']); ?>
+                                    <?php submit_button(__('Export Settings', 'white-label'), 'secondary', 'submit', false, ['id' => 'submit-export']); ?>
                                 </p>
                             </form>
                         </td>

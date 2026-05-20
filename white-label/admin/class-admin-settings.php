@@ -100,7 +100,7 @@ class white_label_Admin_Settings
 
         $sections['white_label_general'] = [
             'id' => 'white_label_general',
-            'title' => __('General', 'white_label'),
+            'title' => __('General', 'white-label'),
             'icon' => 'dashicons-admin-generic',
             'requires_verification' => false,
         ];
@@ -111,20 +111,24 @@ class white_label_Admin_Settings
             'icon' => 'dashicons-admin-settings',
             'requires_verification' => false,
         ];
+        
+        $sections['white_label_visual_tweaks']['alert'] = __('<a target="_blank" href="https://whitewp.com/pro">White Label Pro</a> includes additional admin features to <a target="_blank" href="https://whitewp.com/documentation/article/hide-wordpress-update-nags/">hide update nags</a>, <a target="_blank" href="https://whitewp.com/documentation/article/wordpress-admin-notifications/">remove notifications</a>, <a target="_blank" href="https://whitewp.com/documentation/article/wordpress-admin-email-verification-screen/">disable admin email verification</a>, and <a target="_blank" href="https://whitewp.com/documentation/article/add-css-to-wordpress-admin/">insert custom CSS</a>.', 'white-label');
 
         $sections['white_label_front_end'] = [
             'id' => 'white_label_front_end',
-            'title' => __('Front End', 'white_label'),
+            'title' => __('Front End', 'white-label'),
             'icon' => 'dashicons-welcome-view-site',
             'requires_verification' => false,
         ];
 
         $sections['white_label_login'] = [
             'id' => 'white_label_login',
-            'title' => __('Login', 'white_label'),
+            'title' => __('Login', 'white-label'),
             'icon' => 'dashicons-id',
             'requires_verification' => false,
         ];
+        
+        $sections['white_label_login']['alert'] = __('<a target="_blank" href="https://whitewp.com/pro">White Label Pro</a> includes additional login features to <a target="_blank" href="https://whitewp.com/documentation/article/wordpress-login-url/">change the login URL</a>, setup a <a target="_blank" href="https://whitewp.com/documentation/article/wordpress-login-redirect/">login redirect</a>, or create a <a target="_blank" href="https://whitewp.com/documentation/article/wordpress-custom-login-notification/">custom login notification</a>.', 'white-label');
 
         $sections['white_label_dashboard'] = [
             'id' => 'white_label_dashboard',
@@ -132,6 +136,8 @@ class white_label_Admin_Settings
             'icon' => 'dashicons-dashboard',
             'requires_verification' => false,
         ];
+        
+        $sections['white_label_dashboard']['alert'] = __('<a target="_blank" href="https://whitewp.com/pro">White Label Pro</a> includes an additional feature to <a target="_blank" href="https://whitewp.com/documentation/article/remove-wordpress-dashboard-widgets/">remove individual dashboard widgets</a>.', 'white-label');
 
         $sections['white_label_menus'] = [
             'id' => 'white_label_menus',
@@ -140,12 +146,16 @@ class white_label_Admin_Settings
             'requires_verification' => false,
         ];
         
+        $sections['white_label_menus']['alert'] = __('<a target="_blank" href="https://whitewp.com/pro">White Label Pro</a> includes additional features to <a target="_blank" href="https://whitewp.com/documentation/article/rename-wordpress-admin-menus/">rename admin menus</a>, <a target="_blank" href="https://whitewp.com/documentation/article/change-wordpress-admin-menu-icon/">change admin menu icons</a>, <a target="_blank" href="https://whitewp.com/documentation/article/rename-wordpress-admin-menus/">rename admin bar items</a>, <a target="_blank" href="https://whitewp.com/documentation/article/hide-wordpress-admin-menus/">hide admin bar items</a>, and <a target="_blank" href="https://whitewp.com/documentation/article/remove-wordpress-admin-bar/">remove the front end admin bar</a>.', 'white-label');
+        
         $sections['white_label_plugins'] = [
             'id' => 'white_label_plugins',
             'title' => __('Plugins', 'white-label'),
             'icon' => 'dashicons-admin-plugins',
             'requires_verification' => false,
         ];
+        
+        $sections['white_label_plugins']['alert'] = __('<a target="_blank" href="https://whitewp.com/pro">White Label Pro</a> includes additional features to <a target="_blank" href="https://whitewp.com/documentation/article/change-wordpress-plugin-details/">change plugin details</a> and remove the <a target="_blank" href="https://whitewp.com/documentation/article/remove-wordpress-add-plugin-button/">Add Plugin</a>, <a target="_blank" href="https://whitewp.com/documentation/article/remove-wordpress-upload-plugin-button/">Upload Plugin</a>, <a target="_blank" href="https://whitewp.com/documentation/article/remove-wordpress-plugin-install-now-button/">Install Now</a>, <a target="_blank" href="https://whitewp.com/documentation/article/remove-wordpress-plugin-update-now-button/">Update Now</a> and <a target="_blank" href="https://whitewp.com/documentation/article/remove-wordpress-plugin-activate-button/">Activate</a> buttons.', 'white-label');
 
         if (is_plugin_active('elementor/elementor.php') || is_plugin_active('elementor-pro/elementor-pro.php')) {
             $sections['white_label_plugins_elementor'] = [
@@ -200,12 +210,14 @@ class white_label_Admin_Settings
             'icon' => 'dashicons-admin-appearance',
             'requires_verification' => false,
         ];
+        
+        $sections['white_label_themes']['alert'] = __('<a target="_blank" href="https://whitewp.com/pro">White Label Pro</a> includes additional features to <a target="_blank" href="https://whitewp.com/documentation/article/rename-wordpress-theme/">rename themes</a>, <a target="_blank" href="https://whitewp.com/documentation/article/remove-wordpress-theme-details/">remove theme details</a>, <a target="_blank" href="https://whitewp.com/documentation/article/change-wordpress-theme-screenshot/">change theme screenshots</a>, and remove <a target="_blank" href="https://whitewp.com/documentation/article/remove-wordpress-activate-theme-button/">Activate</a>, <a target="_blank" href="https://whitewp.com/documentation/article/remove-wordpress-customize-theme-button/">Customize</a>, <a target="_blank" href="https://whitewp.com/documentation/article/remove-wordpress-live-preview-theme-button/">Live Preview</a>, <a target="_blank" href="https://whitewp.com/documentation/article/remove-wordpress-theme-update-available-button/">Update</a>, <a target="_blank" href="https://whitewp.com/documentation/article/remove-wordpress-delete-theme-button/">Delete</a>, <a target="_blank" href="https://whitewp.com/documentation/article/remove-wordpress-add-new-theme-button/">Add New</a>, <a target="_blank" href="https://whitewp.com/documentation/article/remove-wordpress-upload-theme-button/">Upload</a>, and <a target="_blank" href="https://whitewp.com/documentation/article/remove-wordpress-install-theme-button/">Install</a> theme buttons.', 'white-label');
 
 
         if (is_multisite()) {
             $sections['white_label_multisite'] = [
                 'id' => 'white_label_multisite',
-                'title' => __('Multisite', 'white_label'),
+                'title' => __('Multisite', 'white-label'),
                 'icon' => 'dashicons-admin-multisite',
                 'requires_verification' => false,
             ];
@@ -221,7 +233,7 @@ class white_label_Admin_Settings
 
         $sections['white_label_upgrade'] = [
             'id' => 'white_label_upgrade',
-            'title' => __('Upgrade', 'white-label'),
+            'title' => __('Get White Label Pro', 'white-label'),
             'icon' => 'dashicons-admin-settings',
             'requires_verification' => false,
         ];
@@ -235,6 +247,9 @@ class white_label_Admin_Settings
      */
     public function fields()
     {
+        global $wp_version;
+        $wp_version = preg_replace('/[^0-9.]/', '', $wp_version);
+        
         $sections = $this->sections();
         $fields = [];
         
@@ -313,21 +328,21 @@ class white_label_Admin_Settings
             [
                 'name' => 'business_name',
                 'label' => __('Login Logo Name', 'white-label'),
-                'desc' => __('Your business name will be included inside the link attribute on the login logo.', 'white-label'),
+                'desc' => __('This text will be used inside the link attribute on the login logo.', 'white-label'),
                 'placeholder' => __('Business Name', 'white-label'),
                 'type' => 'text',
             ],
             [
                 'name' => 'business_url',
                 'label' => __('Login Logo Link', 'white-label').'<a target="_blank" tabindex="-1" class="white-label-help" href="https://whitewp.com/documentation/article/wordpress-login-logo-link/"><span class="dashicons dashicons-editor-help"></span></a>',
-                'desc' => __('The login logo will link to your business URL.', 'white-label'),
-                'placeholder' => __('https://whitewp.com/', 'white-label'),
+                'desc' => __('', 'white-label'),
+                'placeholder' => get_site_url(),
                 'type' => 'url',
             ],
             [
                 'name' => 'login_logo_file',
                 'label' => __('Login Logo Image', 'white-label').'<a target="_blank" tabindex="-1" class="white-label-help" href="https://whitewp.com/documentation/article/custom-wordpress-login-logo/"><span class="dashicons dashicons-editor-help"></span></a>',
-                'desc' => __('Replaces the WordPress logo on the login screen.', 'white-label'),
+                'desc' => __('', 'white-label'),
                 'type' => 'file',
                 'default' => '',
                 'options' => [
@@ -395,28 +410,28 @@ class white_label_Admin_Settings
                 'label' => __('Background Color', 'white-label'),
                 'desc' => __('Background color of the login page if you do not have an image selected.', 'white-label'),
                 'type' => 'color',
-                'default' => '#f1f1f1',
+                'default' => (version_compare($wp_version, '7.0', '<') ? '#f1f1f1' : '#f0f0f1'),
             ],
             [
                 'name' => 'login_box_background_color',
                 'label' => __('Login Box Background Color', 'white-label'),
                 'desc' => __('Background color of the login details box.', 'white-label'),
                 'type' => 'color',
-                'default' => '#fff',
+                'default' => '#ffffff',
             ],
             [
                 'name' => 'login_box_text_color',
                 'label' => __('Login Box Text Color', 'white-label'),
                 'desc' => __('Color of the text inside the login box.', 'white-label'),
                 'type' => 'color',
-                'default' => '#444',
+                'default' => (version_compare($wp_version, '7.0', '<') ? '#444444' : '#3c434a'),
             ],
             [
                 'name' => 'login_text_color',
                 'label' => __('Link Color', 'white-label'),
                 'desc' => __('Color of the links outside the login box.', 'white-label'),
                 'type' => 'color',
-                'default' => '#555d66',
+                'default' => (version_compare($wp_version, '7.0', '<') ? '#555d66' : '#50575e'),
             ],
             [
                 'name' => 'login_link_background_color',
@@ -430,21 +445,27 @@ class white_label_Admin_Settings
                 'label' => __('Button Background Color', 'white-label'),
                 'desc' => __('Background color of the login button.', 'white-label'),
                 'type' => 'color',
-                'default' => '#007cba',
+                'default' => (version_compare($wp_version, '7.0', '<') ? '#007cba' : '#3958e9'),
             ],
             [
                 'name' => 'login_button_border_color',
                 'label' => __('Button Border Color', 'white-label'),
                 'desc' => __('Border color of the login button.', 'white-label'),
                 'type' => 'color',
-                'default' => '#2271b1',
+                'default' => (version_compare($wp_version, '7.0', '<') ? '#2271b1' : '#3958e9'),
             ],
             [
                 'name' => 'login_button_font_color',
                 'label' => __('Button Text Color', 'white-label'),
                 'desc' => __('Color of the login button text.', 'white-label'),
                 'type' => 'color',
-                'default' => '#fff',
+                'default' => '#ffffff',
+            ],
+            [
+                'name' => 'login_form_fields',
+                'label' => __('Form Fields', 'white-label'),
+                'type' => 'color',
+                'default' => (version_compare($wp_version, '7.0', '<') ? '#2371b1' : '#3858e9'),
             ],
             [
                 'name' => 'css_section',
@@ -523,7 +544,7 @@ class white_label_Admin_Settings
                 'name' => 'admin_color_scheme_menu_background',
                 'label' => __('Menu Background', 'white-label'),
                 'type' => 'color',
-                'default' => '#23282d',
+                'default' => (version_compare($wp_version, '7.0', '<') ? '#23282d' : '#1e1e1e'),
             ],
             [
                 'name' => 'admin_color_scheme_menu_text',
@@ -535,49 +556,49 @@ class white_label_Admin_Settings
                 'name' => 'admin_color_scheme_menu_highlight',
                 'label' => __('Menu Highlight', 'white-label'),
                 'type' => 'color',
-                'default' => '#0073aa',
+                'default' => (version_compare($wp_version, '7.0', '<') ? '#0073aa' : '#3858e9'),
             ],
             [
                 'name' => 'admin_color_scheme_submenu_background',
                 'label' => __('Submenu Background', 'white-label'),
                 'type' => 'color',
-                'default' => '#2c3338',
+                'default' => (version_compare($wp_version, '7.0', '<') ? '#2c3338' : '#0c0c0c'),
             ],
             [
                 'name' => 'admin_color_scheme_submenu_text',
                 'label' => __('Submenu Text', 'white-label'),
                 'type' => 'color',
-                'default' => '#e5e5e5',
+                'default' => (version_compare($wp_version, '7.0', '<') ? '#e5e5e5' : '#bbbbbb'),
             ],
             [
                 'name' => 'admin_color_scheme_submenu_highlight',
                 'label' => __('Submenu Highlight', 'white-label'),
                 'type' => 'color',
-                'default' => '#0073aa',
+                'default' => (version_compare($wp_version, '7.0', '<') ? '#0073aa' : '#7c90ff'),
             ],
             [
                 'name' => 'admin_color_scheme_notifications',
                 'label' => __('Notifications', 'white-label'),
                 'type' => 'color',
-                'default' => '#d54e21',
+                'default' => (version_compare($wp_version, '7.0', '<') ? '#d54e21' : '#3858e9'),
             ],
             [
                 'name' => 'admin_color_scheme_links',
                 'label' => __('Links', 'white-label'),
                 'type' => 'color',
-                'default' => '#0073aa',
+                'default' => (version_compare($wp_version, '7.0', '<') ? '#0073aa' : '#3858e9'),
             ],
             [
                 'name' => 'admin_color_scheme_buttons',
                 'label' => __('Button Backgrounds', 'white-label'),
                 'type' => 'color',
-                'default' => '#2371B1',
+                'default' => (version_compare($wp_version, '7.0', '<') ? '#2371b1' : '#3858e9'),
             ],
             [
                 'name' => 'admin_color_scheme_form_fields',
                 'label' => __('Form Fields', 'white-label'),
                 'type' => 'color',
-                'default' => '#2271b1',
+                'default' => (version_compare($wp_version, '7.0', '<') ? '#2371b1' : '#3858e9'),
             ],
             [
                 'name' => 'footer_section',
@@ -620,7 +641,7 @@ class white_label_Admin_Settings
         ]);
 
         $desc_remove_widgets_section = __('Remove widgets from the admin dashboard.', 'white-label');
-        $desc_remove_widgets_section = __('Remove widgets from the admin dashboard. Remove individual widgets by upgrading to <a href="https://whitewp.com/pro?utm_source=plugin_white_label&utm_content=remove_widgets" target="_blank">White Label Pro</a>.', 'white-label');
+        // $desc_remove_widgets_section = __('Remove widgets from the admin dashboard. Remove individual widgets by upgrading to <a href="https://whitewp.com/pro?utm_source=plugin_white_label&utm_content=remove_widgets" target="_blank">White Label Pro</a>.', 'white-label');
 
         $fields['white_label_dashboard'] = [
             [
@@ -701,7 +722,7 @@ class white_label_Admin_Settings
         ];
 
         $desc_sidebar_menus_section = __('Hide, rename, or change icons of sidebar menu items.', 'white-label').' <a target="_blank" tabindex="-1" href="https://whitewp.com/documentation/article/white-label-administrators">'.__('These settings are ignored by White Label Administrators.', 'white-label').'</a>';
-        $desc_sidebar_menus_section = __('Hide sidebar menu items.', 'white-label').' <a target="_blank" tabindex="-1" href="https://whitewp.com/documentation/article/white-label-administrators">'.__('These settings are ignored by White Label Administrators.', 'white-label').'</a> '.__('Rename sidebar menus and change icons by upgrading to <a href="https://whitewp.com/pro?utm_source=plugin_white_label&utm_content=sidebar_menus" target="_blank">White Label Pro</a>.', 'white-label');
+        // $desc_sidebar_menus_section = __('Hide sidebar menu items.', 'white-label').' <a target="_blank" tabindex="-1" href="https://whitewp.com/documentation/article/white-label-administrators">'.__('These settings are ignored by White Label Administrators.', 'white-label').'</a> '.__('Rename sidebar menus and change icons by upgrading to <a href="https://whitewp.com/pro?utm_source=plugin_white_label&utm_content=sidebar_menus" target="_blank">White Label Pro</a>.', 'white-label');
 
         $fields['white_label_menus'] = [
             [
@@ -755,7 +776,7 @@ class white_label_Admin_Settings
         ];
 
         $desc_plugins_section = __('Hide plugins or change their details, when viewing the Plugins screen.', 'white-label').' <a target="_blank" tabindex="-1" href="https://whitewp.com/documentation/article/white-label-administrators">'.__('These settings are ignored by White Label Administrators.', 'white-label').'</a>';
-        $desc_plugins_section = __('Hide plugins when viewing the Plugins screen.', 'white-label').' <a target="_blank" tabindex="-1" href="https://whitewp.com/documentation/article/white-label-administrators">'.__('These settings are ignored by White Label Administrators.', 'white-label').'</a> '.__('Change plugin details by upgrading to <a href="https://whitewp.com/pro?utm_source=plugin_white_label&utm_content=plugins" target="_blank">White Label Pro</a>.', 'white-label');
+        // $desc_plugins_section = __('Hide plugins when viewing the Plugins screen.', 'white-label').' <a target="_blank" tabindex="-1" href="https://whitewp.com/documentation/article/white-label-administrators">'.__('These settings are ignored by White Label Administrators.', 'white-label').'</a> '.__('Change plugin details by upgrading to <a href="https://whitewp.com/pro?utm_source=plugin_white_label&utm_content=plugins" target="_blank">White Label Pro</a>.', 'white-label');
 
         $fields['white_label_plugins'] = [
             [
@@ -775,7 +796,7 @@ class white_label_Admin_Settings
         ];
 
         $desc_themes_section = __('Hide themes, or change their details, when viewing the Themes screen. ', 'white-label').' <a target="_blank" tabindex="-1" href="https://whitewp.com/documentation/article/white-label-administrators">'.__('These settings are ignored by White Label Administrators.', 'white-label').'</a>';
-        $desc_themes_section = __('Hide themes when viewing the Themes screen.', 'white-label').' <a target="_blank" tabindex="-1" href="https://whitewp.com/documentation/article/white-label-administrators">'.__('These settings are ignored by White Label Administrators.', 'white-label').'</a> '.__('Change theme details by upgrading to <a href="https://whitewp.com/pro?utm_source=plugin_white_label&utm_content=themes" target="_blank">White Label Pro</a>.', 'white-label');
+        // $desc_themes_section = __('Hide themes when viewing the Themes screen.', 'white-label').' <a target="_blank" tabindex="-1" href="https://whitewp.com/documentation/article/white-label-administrators">'.__('These settings are ignored by White Label Administrators.', 'white-label').'</a> '.__('Change theme details by upgrading to <a href="https://whitewp.com/pro?utm_source=plugin_white_label&utm_content=themes" target="_blank">White Label Pro</a>.', 'white-label');
 
         $fields['white_label_themes'] = [
             [
@@ -908,7 +929,7 @@ class white_label_Admin_Settings
     {
         echo '<div id="white-label-header">';
         echo '<div id="white-label-header-version">';
-        echo '<b>White Label</b> &middot; v2.16.6';
+        echo '<b>White Label</b> &middot; v2.16.7';
         echo '</div>'; // #white-label-header-version
     
         echo '<div id="white-label-header-links">';
@@ -971,13 +992,13 @@ class white_label_Admin_Settings
     public function scripts($hook)
     {
         if (isset($_GET['white-label-preview-mode']) && sanitize_text_field($_GET['white-label-preview-mode']) === 'Y') {
-            wp_enqueue_style('white-label-preview-mode', plugins_url('assets/css/white-label-preview-mode.css', dirname(__FILE__)), null, '2.16.6');
+            wp_enqueue_style('white-label-preview-mode', plugins_url('assets/css/white-label-preview-mode.css', dirname(__FILE__)), null, '2.16.7');
         }
 
         $wl_panel = white_label_get_option('admin_welcome_panel_content', 'white_label_dashboard', false);
 
         if (! empty($wl_panel)) {
-            wp_enqueue_style('white-label-dashboard', plugins_url('assets/css/white-label-dashboard.css', dirname(__FILE__)), null, '2.16.6');
+            wp_enqueue_style('white-label-dashboard', plugins_url('assets/css/white-label-dashboard.css', dirname(__FILE__)), null, '2.16.7');
         }
 
         if ($hook != 'settings_page_white-label') {
@@ -991,7 +1012,7 @@ class white_label_Admin_Settings
         wp_enqueue_script('wp-color-picker');
 
         // White Label
-        wp_enqueue_style('white-label', plugins_url('assets/css/white-label.css', dirname(__FILE__)), null, '2.16.6');
-        wp_enqueue_script('white-label', plugins_url('assets/js/white-label.min.js', dirname(__FILE__)), ['jquery'], '2.16.6');
+        wp_enqueue_style('white-label', plugins_url('assets/css/white-label.css', dirname(__FILE__)), null, '2.16.7');
+        wp_enqueue_script('white-label', plugins_url('assets/js/white-label.min.js', dirname(__FILE__)), ['jquery'], '2.16.7');
     }
 }

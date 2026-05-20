@@ -4,9 +4,9 @@ Tags: white label, login page, custom login, custom dashboard, custom admin
 Author URI: https://whitewp.com
 Author: WhiteWP.com
 Requires at least: 5.0
-Tested up to: 6.9
+Tested up to: 7.0
 Requires PHP: 7.4
-Stable tag: 2.16.6
+Stable tag: 2.16.7
 License: GPLv2 or later
 License URI: https://www.gnu.org/licenses/gpl-2.0.html
 
@@ -81,30 +81,29 @@ White Label is made for those who want to build a custom admin for WordPress. He
 * Select multiple administrators that can bypass rules
 * Apply White Label settings from your main site to every site on your Multisite Network
 
-## White Label Pro
-[White Label Pro](https://whitewp.com?utm_source=readme&utm_medium=plugin-repository&utm_content=white-label-pro) is the premium version of our plugin. It's designed specifically for WordPress professionals who require an extra level of customization. Its features include:
+### Upgrade to White Label Pro
 
-* White Label Yoast SEO
-* White Label Gravity Forms
-* White Label SearchWP
-* Change WordPress login URL
-* Rename admin menu items
-* Change admin menu icons
-* Change plugin details like name, description, links, etc.
-* Change theme details like name and screenshot, remove theme action buttons and the theme details overlay.
-* Hide admin bar items
-* Rename admin bar items
-* Remove the front end admin bar
-* Remove individual dashboard widgets
-* Hide update notifications and nags
-* Remove admin notifications
-* Remove the screen options button
-* Remove the help button
-* Add a login redirect
-* Change default email settings
-* Disable the administration email verification screen
+[White Label Pro](https://whitewp.com/pro?utm_source=readme&utm_medium=plugin-repository&utm_content=white-label-pro) is built for agencies managing multiple client sites. It adds white labeling for the plugins your clients use every day — plus granular admin controls that keep clients out of things they shouldn't touch.
 
-[Learn more about White Label Pro at our website](https://whitewp.com?utm_source=readme&utm_medium=plugin-repository&utm_content=white-label-pro).
+**White Label Third-Party Plugins**
+• [White Label Yoast SEO](https://whitewp.com/white-label-yoast-seo?utm_source=readme&utm_medium=plugin-repository&utm_content=white-label-pro) to remove branding and premium upsells
+• [White Label Gravity Forms](https://whitewp.com/white-label-gravity-forms?utm_source=readme&utm_medium=plugin-repository&utm_content=white-label-pro) to customize branding and settings
+• [White Label SearchWP](https://whitewp.com/white-label-searchwp?utm_source=readme&utm_medium=plugin-repository&utm_content=white-label-pro) to replace branding and control menu access
+
+**Advanced Admin Controls**
+• Rename admin menu items
+• Change admin menu icons
+• Rename or hide admin bar items
+• Change the WordPress login URL
+• Change plugin and theme details (name, description, links)
+• Hide update notifications from non-admin users
+• Remove admin notifications, Screen Options, and Help buttons
+• Add a login redirect
+• Change default WordPress email sender settings
+• Disable the admin email verification screen
+• Insert custom CSS into the admin
+
+[Learn more about White Label Pro at our website](https://whitewp.com/pro?utm_source=readme&utm_medium=plugin-repository&utm_content=white-label-pro).
 
 ## Feedback
 
@@ -162,6 +161,13 @@ Yes, White Label Multisite is supported. [Please visit our website to learn more
 11. White Label Front End Settings
 
 == Changelog ==
+
+= 2.16.7 =
+* WordPress 7.0 compatibility updates.
+* New "Form Fields" option for Login Color Scheme.
+* New "Active" status column for Plugins and Themes lists.
+* Bug fixes for Elementor settings.
+* Interface changes.
 
 = 2.16.6 =
 * Bug fix for Breakdance page builder.

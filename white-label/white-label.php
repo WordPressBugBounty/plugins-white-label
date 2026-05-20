@@ -1,9 +1,9 @@
 <?php
 /**
- * Plugin Name:       White Label
+ * Plugin Name:       White Label - WordPress Custom Admin, Custom Login Page, and Custom Dashboard
  * Plugin URI:        https://whitewp.com/
  * Description:       White Label WordPress and make life easier for your clients.
- * Version:           2.16.6
+ * Version:           2.16.7
  * Author:            WhiteWP.com
  * Author URI:        https://whitewp.com/
  *
@@ -39,7 +39,7 @@ class WHITEWP_Init
     {
         $this->constants = [
             'name' => 'White Label',
-            'version' => '2.16.6',
+            'version' => '2.16.7',
             'slug' => plugin_basename(__FILE__, ' . php'),
             'base' => plugin_basename(__FILE__),
             'name_sanitized' => basename(__FILE__, '. php'),

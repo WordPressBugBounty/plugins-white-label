@@ -402,7 +402,8 @@ class white_label_Settings_Api
         $html .= __('Hide', 'white-label').'<a target="_blank" tabindex="-1" class="white-label-help" href="https://whitewp.com/documentation/article/hide-wordpress-plugins/"><span class="dashicons dashicons-editor-help"></span></a>';
         $html .= '</td>';
 
-        $html .= '<td style="width:90%;">'.__('Plugin', 'white-label').'</td>';
+        $html .= '<td style="width:75%;">'.__('Plugin', 'white-label').'</td>';
+        $html .= '<td style="width:15%;">&nbsp;</td>';
 
 
         $html .= '</tr>';
@@ -418,6 +419,11 @@ class white_label_Settings_Api
             $html .= '<tr>';
             $html .= '<td style="vertical-align:top;">'.sprintf('<input type="checkbox" class="checkbox" id="wl-%1$s[%2$s][%3$s]" name="%1$s[%2$s][%3$s]" value="%3$s" %4$s />', $args['section'], $args['id'], $key, checked($checked, $key, false)).'</td>';
             $html .= '<td style="vertical-align:top;">'.$name.'</td>';
+            $html .= '<td style="vertical-align:top; text-align:center;">';
+            if (is_plugin_active($key) || (is_multisite() && is_plugin_active_for_network($key))) {
+                $html .= __('Active', 'white-label');
+            }
+            $html.= '</td>';
             $html .= '</tr>';
         }
         $html .= '</tbody>';
@@ -494,7 +500,8 @@ class white_label_Settings_Api
         $html .= __('Hide', 'white-label').'<a target="_blank" tabindex="-1" class="white-label-help" href="https://whitewp.com/documentation/article/hide-wordpress-theme/"><span class="dashicons dashicons-editor-help"></span></a>';
         $html .= '</td>';
 
-        $html .= '<td style="width:90%;">'.__('Theme', 'white-label').'</td>';
+        $html .= '<td style="width:75%;">'.__('Theme', 'white-label').'</td>';
+        $html .= '<td style="width:15%;">&nbsp;</td>';
 
 
         $html .= '</tr>';
@@ -502,6 +509,8 @@ class white_label_Settings_Api
 
         $html .= '<tbody>';
         $wl_theme_counter = 0;
+        $active_stylesheet = get_stylesheet();
+        $active_template = get_template();
 
         foreach ($args['options'] as $key => $name) {
             $wl_theme_counter++;
@@ -510,6 +519,11 @@ class white_label_Settings_Api
             $html .= '<tr>';
             $html .= '<td style="vertical-align:top;">'.sprintf('<input type="checkbox" class="checkbox" id="wl-%1$s[%2$s][%3$s]" name="%1$s[%2$s][%3$s]" value="%3$s" %4$s />', $args['section'], $args['id'], $key, checked($checked, $key, false)).'</td>';
             $html .= '<td style="vertical-align:top;">'.$name.'</td>';
+            $html .= '<td style="vertical-align:top; text-align:center;">';
+            if ($key == $active_stylesheet || $key == $active_template) {
+                $html .= __('Active', 'white-label');
+            }
+            $html.= '</td>';
             $html .= '</tr>';
         }
         $html .= '</tbody>';
@@ -719,7 +733,7 @@ class white_label_Settings_Api
         $value = esc_attr($this->get_option($args['id'], $args['section'], $args['std']));
         $size = isset($args['size']) && !is_null($args['size']) ? $args['size'] : 'regular';
         $id = $args['section'].'['.$args['id'].']';
-        $label = isset($args['options']['button_label']) ? $args['options']['button_label'] : __('Choose File');
+        $label = isset($args['options']['button_label']) ? $args['options']['button_label'] : __('Choose File', 'white-label');
         $html = sprintf('<input type="text" class="%1$s-text wpsa-url" id="%2$s[%3$s]" name="%2$s[%3$s]" value="%4$s"/>', $size, $args['section'], $args['id'], $value);
         $html .= '<input type="button" class="button wpsa-browse" value="'.$label.'" />';
         $html .= $this->get_field_description($args);
@@ -895,7 +909,7 @@ class white_label_Settings_Api
         foreach ($this->settings_sections as $form) {
             echo '<div id="'.$form['id'].'" class="group" style="display: none;">';
 
-            if ($form['title'] != 'Upgrade') {
+            if ($form['title'] != 'Get White Label Pro') {
                 echo '<h1>';
                 echo __($form['title'], 'white-label');
                 if (isset($form['help_url']) && !empty($form['help_url'])) {
@@ -924,7 +938,7 @@ class white_label_Settings_Api
 
                 if (isset($this->settings_fields[$form['id']]) && (isset($form['id']) && $form['id'] != 'white_label_pro_license')) {
                     echo '<div class="white-label-submit-button">';
-                    submit_button(sprintf(__('Save %1$s Settings', 'white_label'), $form['title']), 'primary', 'submit', true, ['id' => $form['id']]);
+                    submit_button(sprintf(__('Save %1$s Settings', 'white-label'), $form['title']), 'primary', 'submit', true, ['id' => $form['id']]);
                     echo '</div>';
                 }
                 echo '</form>';

@@ -16,19 +16,23 @@ if (!defined('ABSPATH')) {
  */
 function white_label_login_styles()
 {
+    global $wp_version;
+    $wp_version = preg_replace('/[^0-9.]/', '', $wp_version);
+
     $login_logo_file = white_label_get_option('login_logo_file', 'white_label_login', false);
     $login_logo_width = white_label_get_option('login_logo_width', 'white_label_login', false);
     $login_logo_height = white_label_get_option('login_logo_height', 'white_label_login', false);
     $login_background_file = white_label_get_option('login_background_file', 'white_label_login', false);
-    $login_background_color = white_label_get_option('login_background_color', 'white_label_login', '#f1f1f1');
+    $login_background_color = white_label_get_option('login_background_color', 'white_label_login', (version_compare($wp_version, '7.0', '<') ? '#f1f1f1' : '#f0f0f1'));
 
     $login_box_background_color = white_label_get_option('login_box_background_color', 'white_label_login', '#fff');
-    $login_box_text_color = white_label_get_option('login_box_text_color', 'white_label_login', '#444');
-    $login_text_color = white_label_get_option('login_text_color', 'white_label_login', '#555d66');
+    $login_box_text_color = white_label_get_option('login_box_text_color', 'white_label_login', (version_compare($wp_version, '7.0', '<') ? '#444444' : '#3c434a'));
+    $login_text_color = white_label_get_option('login_text_color', 'white_label_login', (version_compare($wp_version, '7.0', '<') ? '#555d66' : '#50575e'));
     $login_link_background_color = white_label_get_option('login_link_background_color', 'white_label_login', 'transparent');
-    $login_button_background_color = white_label_get_option('login_button_background_color', 'white_label_login', '#007cba');
-    $login_button_border_color = white_label_get_option('login_button_border_color', 'white_label_login', '#2271b1');
+    $login_button_background_color = white_label_get_option('login_button_background_color', 'white_label_login', (version_compare($wp_version, '7.0', '<') ? '#007cba' : '#3958e9'));
+    $login_button_border_color = white_label_get_option('login_button_border_color', 'white_label_login', (version_compare($wp_version, '7.0', '<') ? '#2271b1' : '#3958e9'));
     $login_button_font_color = white_label_get_option('login_button_font_color', 'white_label_login', '#fff');
+    $login_form_fields = white_label_get_option('login_form_fields', 'white_label_login', (version_compare($wp_version, '7.0', '<') ? '#2371b1' : '#3858e9'));
 
     $login_page_template = white_label_get_option('login_page_template', 'white_label_login', false);
 
@@ -67,10 +71,10 @@ function white_label_login_styles()
 
     $template_css.= "body.login form { background-color: $login_box_background_color; border: $login_box_background_color; }\n";
     $template_css.= "body.login label, body.login h1.admin-email__heading, body.login p.admin-email__details { color: $login_box_text_color; }\n";
-    $template_css.= "body.login #backtoblog, body.login #nav, body.login #backtoblog a, body.login #nav a, body.login p.admin-email__details a, body.login div.admin-email__actions-secondary a { color: $login_text_color; }\n";
+    $template_css.= "body.login a, body.login a:hover, body.login a:focus { color: $login_text_color !important; }\n";
     $template_css.= "body.login #backtoblog, body.login #nav { background-color: $login_link_background_color; }\n";
     $template_css.= "body.login input[type=submit] { background-color: $login_button_background_color !important; border-color: $login_button_border_color !important; color: $login_button_font_color !important; }\n";
-
+    $template_css.= "body.login input:checked { background: $login_form_fields; } body.login input:focus, body.login select:focus, body.login textarea:focus { border-color: $login_form_fields; box-shadow: 0 0 0 1px $login_form_fields; }\n";
     if ($login_remove_remember_me_checkbox === 'on') {
         $template_css.= '.forgetmenot { display: none !important; }';
     }

@@ -115,6 +115,7 @@ function white_label_settings_elementor($fields)
                     'notes' => __('Notes', 'white-label'),
                     'history' => __('History', 'white-label'),
                     'recently-edited' => __('Recently Edited', 'white-label'),
+                    'checklist' => __('Checklist', 'white-label'),
                     'whats-new' => __('What\'s New', 'white-label'),
                     'finder' => __('Finder', 'white-label'),
                     'structure' => __('Structure', 'white-label'),
@@ -136,14 +137,14 @@ function white_label_settings_elementor($fields)
         array_push($fields['white_label_plugins_elementor'], [
             'name' => 'elementor_hide_upgrade_nags',
             'label' => __('Hide Upgrade Nags', 'white-label').'<a target="_blank" tabindex="-1" class="white-label-help" href="https://whitewp.com/documentation/article/hide-elementor-pro-upgrade-nags/"><span class="dashicons dashicons-editor-help"></span></a>',
-            'desc' => __('', 'white-label'),
+            'desc' => '',
             'type' => 'checkbox',
         ]);
 
         array_push($fields['white_label_plugins_elementor'], [
             'name' => 'elementor_hide_pro_widgets',
             'label' => __('Hide Pro Widgets', 'white-label').'<a target="_blank" tabindex="-1" class="white-label-help" href="https://whitewp.com/documentation/article/hide-elementor-pro-widgets/"><span class="dashicons dashicons-editor-help"></span></a>',
-            'desc' => __('', 'white-label'),
+            'desc' => '',
             'type' => 'checkbox',
         ]);
     }
@@ -355,6 +356,12 @@ function white_label_elementor_editor_css()
         }
         <?php endif; ?>
 
+        <?php if (is_array($elementor_editor_navigation) && isset($elementor_editor_navigation['checklist'])) : ?>
+        .MuiToolbar-root .MuiBox-root .MuiGrid-root:nth-of-type(3) .MuiStack-root .MuiBox-root:nth-of-type(1) {
+            display: none !important;
+        }
+        <?php endif; ?>
+
         <?php if (is_array($elementor_editor_navigation) && isset($elementor_editor_navigation['whats-new'])) : ?>
         .MuiToolbar-root .MuiBox-root .MuiGrid-root:nth-of-type(3) .MuiStack-root .MuiBox-root:nth-of-type(2) {
             display: none !important;
@@ -493,7 +500,8 @@ function white_label_elementor_admin_css()
         a.eps-button--cta[href*="elementor.com"],
         a[href*="elementor.com/go-pro-home-sidebar-upgrade"],
         a[href*="elementor.com/go-pro-element-manager"],
-        #e-dashboard-overview li.e-overview__go-pro { 
+        #e-dashboard-overview li.e-overview__go-pro,
+        ul.wp-submenu li:has(a[href*="admin.php?page=elementor-one-upgrade"]) { 
             display: none !important;
         }
         <?php endif; ?>
