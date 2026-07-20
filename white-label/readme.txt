@@ -6,7 +6,7 @@ Author: WhiteWP.com
 Requires at least: 5.0
 Tested up to: 7.0
 Requires PHP: 7.4
-Stable tag: 2.16.7
+Stable tag: 2.16.8
 License: GPLv2 or later
 License URI: https://www.gnu.org/licenses/gpl-2.0.html
 
@@ -161,6 +161,10 @@ Yes, White Label Multisite is supported. [Please visit our website to learn more
 11. White Label Front End Settings
 
 == Changelog ==
+
+= 2.16.8 =
+* New "Angie" feature under "Elementor Editor Navigation" settings.
+* Bug fixes for Elementor settings.
 
 = 2.16.7 =
 * WordPress 7.0 compatibility updates.
