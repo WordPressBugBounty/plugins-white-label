@@ -513,6 +513,7 @@ function white_label_elementor_admin_css()
         a[href*="elementor.com/go-pro-home-sidebar-upgrade"],
         a[href*="elementor.com/go-pro-element-manager"],
         #e-dashboard-overview li.e-overview__go-pro,
+        #e-conversion-banner.e-conversion-banner--ready, .e-conversion-banner-inline,
         ul.wp-submenu li:has(a[href*="admin.php?page=elementor-one-upgrade"]) { 
             display: none !important;
         }
