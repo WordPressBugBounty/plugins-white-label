@@ -113,10 +113,9 @@ function white_label_settings_elementor($fields)
                     'my-elementor' => __('Connect My Account/My Elementor', 'white-label'),
                     'exit' => __('Exit to WordPress', 'white-label'),
                     'angie' => __('Angie', 'white-label'),
-                    'page-settings' => __('Page Settings', 'white-label'),
                     'history' => __('History', 'white-label'),
+                    'page-settings' => __('Page Settings', 'white-label'),
                     'recently-edited' => __('Recently Edited', 'white-label'),
-                    'checklist' => __('Checklist', 'white-label'),
                     'whats-new' => __('What\'s New', 'white-label'),
                     'finder' => __('Finder', 'white-label'),
                     'structure' => __('Structure', 'white-label'),
@@ -350,13 +349,13 @@ function white_label_elementor_editor_css()
         }
         <?php endif; ?>
 
-        <?php if (is_array($elementor_editor_navigation) && isset($elementor_editor_navigation['page-settings'])) : ?>
+        <?php if (is_array($elementor_editor_navigation) && isset($elementor_editor_navigation['history'])) : ?>
         #elementor-editor-wrapper-v2 > header > div > div > div.MuiGrid-root:nth-of-type(1) > div.MuiStack-root > span:nth-child(3) > button {
             display: none !important;
         }
         <?php endif; ?>
 
-        <?php if (is_array($elementor_editor_navigation) && isset($elementor_editor_navigation['history'])) : ?>
+        <?php if (is_array($elementor_editor_navigation) && isset($elementor_editor_navigation['page-settings'])) : ?>
         #elementor-editor-wrapper-v2 > header > div > div > div.MuiGrid-root:nth-of-type(1) > div.MuiStack-root > span:nth-child(4) > button {
             display: none !important;
         }
@@ -370,31 +369,31 @@ function white_label_elementor_editor_css()
 
         <?php if (is_array($elementor_editor_navigation) && isset($elementor_editor_navigation['checklist'])) : ?>
         .MuiToolbar-root .MuiBox-root .MuiGrid-root:nth-of-type(3) .MuiStack-root .MuiBox-root:nth-of-type(1) {
-            display: none !important;
+            /* display: none !important; */
         }
         <?php endif; ?>
 
         <?php if (is_array($elementor_editor_navigation) && isset($elementor_editor_navigation['whats-new'])) : ?>
-        .MuiToolbar-root .MuiBox-root .MuiGrid-root:nth-of-type(3) .MuiStack-root .MuiBox-root:nth-of-type(2) {
+        .MuiToolbar-root .MuiBox-root .MuiGrid-root:nth-of-type(3) .MuiStack-root .MuiBox-root:nth-of-type(1) {
             display: none !important;
         }
         <?php endif; ?>
 
         <?php if (is_array($elementor_editor_navigation) && isset($elementor_editor_navigation['finder'])) : ?>
         .elementor-panel-menu-items .elementor-panel-menu-item-finder,
-        .MuiToolbar-root .MuiBox-root .MuiGrid-root:nth-of-type(3) .MuiStack-root:nth-of-type(1) .MuiBox-root:nth-of-type(3) {
+        .MuiToolbar-root .MuiBox-root .MuiGrid-root:nth-of-type(3) .MuiStack-root:nth-of-type(1) .MuiBox-root:nth-of-type(2) {
             display: none !important;
         }
         <?php endif; ?>
 
         <?php if (is_array($elementor_editor_navigation) && isset($elementor_editor_navigation['structure'])) : ?>
-        .MuiToolbar-root .MuiBox-root .MuiGrid-root:nth-of-type(3) .MuiStack-root:nth-of-type(1) .MuiBox-root:nth-of-type(4) {
+        .MuiToolbar-root .MuiBox-root .MuiGrid-root:nth-of-type(3) .MuiStack-root:nth-of-type(1) .MuiBox-root:nth-of-type(3) {
             display: none !important;
         }
         <?php endif; ?>
 
         <?php if (is_array($elementor_editor_navigation) && isset($elementor_editor_navigation['preview-changes'])) : ?>
-        .MuiToolbar-root .MuiBox-root .MuiGrid-root:nth-of-type(3) .MuiStack-root:nth-of-type(1) .MuiBox-root:nth-of-type(5) {
+        .MuiToolbar-root .MuiBox-root .MuiGrid-root:nth-of-type(3) .MuiStack-root:nth-of-type(1) .MuiBox-root:nth-of-type(4) {
             display: none !important;
         }
         <?php endif; ?>

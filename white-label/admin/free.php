@@ -167,6 +167,52 @@ function white_label_plugins_gravity_forms()
 add_action('white_label_settings_tab_white_label_plugins_gravity_forms', 'white_label_plugins_gravity_forms');
 
 /**
+ * Ninja Forms Custom Tab.
+ *
+ * @return void
+ */
+function white_label_plugins_ninja_forms()
+{
+    echo '
+        <div class="white-label-subsection white-label-custom-tab">
+            <div class="white-label-custom-tab-left">
+                <p>
+                <a target="_blank" href="https://whitewp.com/pro/">White Label Pro</a> offers features designed to help you white label the popular 
+                Ninja Forms plugin. You can use White Label Pro to customize the interface and feature set of Ninja Forms in a variety of ways.
+                </p>
+
+                <h4>Ninja Forms Features</h4>
+                
+                <ul>
+                    <li>
+                        <a target="_blank" href="https://whitewp.com/documentation/article/ninja-forms-branding/">Ninja Forms Branding</a>
+                        <ul>
+                            <li>Hide Logo</li>
+                            <li>Replace Name</li>
+                        </ul>
+                    </li>
+                    <li><a target="_blank" href="https://whitewp.com/documentation/article/hide-ninja-forms-menus/">Ninja Forms Menus</a></li>
+                    <li><a target="_blank" href="https://whitewp.com/documentation/article/hide-ninja-forms-promotions-and-notifications/">Ninja Forms Promotions and Notifications</a></li>
+                </ul>
+            </div>
+
+            <div class="white-label-custom-tab-right">
+                <a target="_blank" href="https://whitewp.com/white-label-ninja-forms/">
+                    <img src="https://whitewp.com/wp-content/uploads/2026/08/feature-white-label-ninja-forms.png--300x158.png">
+                </a>
+                <h3>White Label ninja Forms</h3>
+                <p>We have written a complete guide on how to white label ninja Forms using all of the features of our plugin.</p>
+                <a class="white-label-learn-more" target="_blank" href="https://whitewp.com/white-label-ninja-forms/">Learn More</a>
+            </div>
+        </div>
+    ';
+
+    echo '</div>'; // This closing div needs to be here.
+}
+
+add_action('white_label_settings_tab_white_label_plugins_ninja_forms', 'white_label_plugins_ninja_forms');
+
+/**
  * SearchWP Custom Tab.
  *
  * @return void

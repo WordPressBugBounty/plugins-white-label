@@ -479,6 +479,7 @@ class white_label_Settings_Api
 
 
 
+
     /**
      * Displays a table for theme settings.
      *

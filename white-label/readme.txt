@@ -6,7 +6,7 @@ Author: WhiteWP.com
 Requires at least: 5.0
 Tested up to: 7.1
 Requires PHP: 7.4
-Stable tag: 2.16.9
+Stable tag: 2.16.10
 License: GPLv2 or later
 License URI: https://www.gnu.org/licenses/gpl-2.0.html
 
@@ -88,6 +88,7 @@ White Label is made for those who want to build a custom admin for WordPress. He
 **White Label Third-Party Plugins**
 • [White Label Yoast SEO](https://whitewp.com/white-label-yoast-seo?utm_source=readme&utm_medium=plugin-repository&utm_content=white-label-pro) to remove branding and premium upsells
 • [White Label Gravity Forms](https://whitewp.com/white-label-gravity-forms?utm_source=readme&utm_medium=plugin-repository&utm_content=white-label-pro) to customize branding and settings
+• [White Label Ninja Forms](https://whitewp.com/white-label-ninja-forms?utm_source=readme&utm_medium=plugin-repository&utm_content=white-label-pro) to remove branding and customize the interface
 • [White Label SearchWP](https://whitewp.com/white-label-searchwp?utm_source=readme&utm_medium=plugin-repository&utm_content=white-label-pro) to replace branding and control menu access
 
 **Advanced Admin Controls**
@@ -161,6 +162,9 @@ Yes, White Label Multisite is supported. [Please visit our website to learn more
 11. White Label Front End Settings
 
 == Changelog ==
+
+= 2.16.10 =
+* Bug fixes for Elementor settings.
 
 = 2.16.9 =
 * Bug fixes for Elementor settings.
